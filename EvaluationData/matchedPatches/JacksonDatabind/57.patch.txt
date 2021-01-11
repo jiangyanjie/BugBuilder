@@ -1,0 +1,12 @@
+/Users/SE4Test/Downloads/checkout/JacksonDatabind+57+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackdata_57_fix/src/main/java/com/fasterxml/jackson/databind/ObjectReader.java b/Users/SE4Test/Downloads/checkout/jackdata_57_buggy/src/main/java/com/fasterxml/jackson/databind/ObjectReader.java
+index 2279c1f..10fddc4 100644
+--- a/Users/SE4Test/Downloads/checkout/jackdata_57_fix/src/main/java/com/fasterxml/jackson/databind/ObjectReader.java
++++ b/Users/SE4Test/Downloads/checkout/jackdata_57_buggy/src/main/java/com/fasterxml/jackson/databind/ObjectReader.java
+@@ -1438,7 +1438,7 @@ public class ObjectReader
+        if (_dataFormatReaders != null) {
+            return _detectBindAndReadValues(_dataFormatReaders.findFormat(src, offset, length), false);
+        }
+        return [-_bindAndReadValues(_considerFilter(_parserFactory.createParser(src, offset, length),-]{+_bindAndReadValues(_considerFilter(_parserFactory.createParser(src),+} 
+                true));
+    }

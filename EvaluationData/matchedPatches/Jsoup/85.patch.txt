@@ -1,0 +1,18 @@
+/Users/SE4Test/Downloads/checkout/Jsoup+85+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jsoup_85_fix/src/main/java/org/jsoup/nodes/Attribute.java b/Users/SE4Test/Downloads/checkout/jsoup_85_buggy/src/main/java/org/jsoup/nodes/Attribute.java
+index e321b6a..612fdeb 100644
+--- a/Users/SE4Test/Downloads/checkout/jsoup_85_fix/src/main/java/org/jsoup/nodes/Attribute.java
++++ b/Users/SE4Test/Downloads/checkout/jsoup_85_buggy/src/main/java/org/jsoup/nodes/Attribute.java
+@@ -41,9 +41,8 @@ public class Attribute implements Map.Entry<String, String>, Cloneable  {
+     * @see #createFromEncoded*/
+    public Attribute(String key, String val, Attributes parent) {
+        Validate.notNull(key);
+        [-key-]{+this.key+} = key.trim();
+        Validate.notEmpty(key); // trimming could potentially make empty, so validate here
+[-        this.key = key;-]
+        this.val = val;
+        this.parent = parent;
+    }
+ 
+ 
+ 

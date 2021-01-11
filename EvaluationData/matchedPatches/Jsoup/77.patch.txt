@@ -1,0 +1,17 @@
+/Users/SE4Test/Downloads/checkout/Jsoup+77+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jsoup_77_fix/src/main/java/org/jsoup/parser/XmlTreeBuilder.java b/Users/SE4Test/Downloads/checkout/jsoup_77_buggy/src/main/java/org/jsoup/parser/XmlTreeBuilder.java
+index 0851833..65d3045 100644
+--- a/Users/SE4Test/Downloads/checkout/jsoup_77_fix/src/main/java/org/jsoup/parser/XmlTreeBuilder.java
++++ b/Users/SE4Test/Downloads/checkout/jsoup_77_buggy/src/main/java/org/jsoup/parser/XmlTreeBuilder.java
+@@ -114,7 +114,7 @@ public class XmlTreeBuilder extends TreeBuilder {
+     * @param endTag tag to close
+     */
+    private void popStackToClose(Token.EndTag endTag) {
+        String elName = [-endTag.normalName();-]{+endTag.name();+}
+        Element firstFound = null;
+
+        for (int pos = stack.size() -1; pos >= 0; pos--) {
+ 
+ 
+ 
+ 

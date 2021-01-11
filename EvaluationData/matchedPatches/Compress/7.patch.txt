@@ -1,0 +1,16 @@
+/Users/SE4Test/Downloads/checkout/Compress_+7+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/compress_7_fix/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java b/Users/SE4Test/Downloads/checkout/compress_7_buggy/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java
+index 8aba2e2..bca115f 100644
+--- a/Users/SE4Test/Downloads/checkout/compress_7_fix/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java
++++ b/Users/SE4Test/Downloads/checkout/compress_7_buggy/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java
+@@ -95,11 +95,10 @@ public class TarUtils {
+        int          end = offset + length;
+
+        for (int i = offset; i < end; ++i) {
+[-byte b = buffer[i];-]            if [-(b-]{+(buffer[i]+} == 0) {[-// Trailing null-]
+                break;
+            }
+            result.append((char) [-(b & 0xFF)); // Allow for sign-extension-]{+buffer[i]);+}
+        }
+
+        return result.toString();

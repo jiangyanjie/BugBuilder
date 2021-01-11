@@ -1,0 +1,20 @@
+/Users/SE4Test/Downloads/checkout/Gson_+12+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/gson_12_fix/gson/src/main/java/com/google/gson/internal/bind/JsonTreeReader.java b/Users/SE4Test/Downloads/checkout/gson_12_buggy/gson/src/main/java/com/google/gson/internal/bind/JsonTreeReader.java
+index 387b29e..2e7644f 100644
+--- a/Users/SE4Test/Downloads/checkout/gson_12_fix/gson/src/main/java/com/google/gson/internal/bind/JsonTreeReader.java
++++ b/Users/SE4Test/Downloads/checkout/gson_12_buggy/gson/src/main/java/com/google/gson/internal/bind/JsonTreeReader.java
+@@ -259,13 +259,9 @@ public final class JsonTreeReader extends JsonReader {
+      pathNames[stackSize - 2] = "null";
+    } else {
+      popStack();
+[-      if (stackSize > 0) {-]
+        pathNames[stackSize - 1] = "null";
+[-      }-]
+    }
+[-    if (stackSize > 0) {-]
+      pathIndices[stackSize - 1]++;
+[-    }-]
+  }
+
+  @Override public String toString() {
+ 

@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/Math+32+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/math_32_fix/src/main/java/org/apache/commons/math3/geometry/euclidean/twod/PolygonsSet.java b/Users/SE4Test/Downloads/checkout/math_32_buggy/src/main/java/org/apache/commons/math3/geometry/euclidean/twod/PolygonsSet.java
+index add24ac..c6e7cf1 100644
+--- a/Users/SE4Test/Downloads/checkout/math_32_fix/src/main/java/org/apache/commons/math3/geometry/euclidean/twod/PolygonsSet.java
++++ b/Users/SE4Test/Downloads/checkout/math_32_buggy/src/main/java/org/apache/commons/math3/geometry/euclidean/twod/PolygonsSet.java
+@@ -133,7 +133,7 @@ public class PolygonsSet extends AbstractRegion<Euclidean2D, Euclidean1D> {
+
+        if (v.length == 0) {
+            final BSPTree<Euclidean2D> tree = getTree(false);
+            if [-(tree.getCut() == null && (Boolean)-]{+((Boolean)+} tree.getAttribute()) {
+                // the instance covers the whole space
+                setSize(Double.POSITIVE_INFINITY);
+                setBarycenter(Vector2D.NaN);
+ 

@@ -1,0 +1,15 @@
+/Users/SE4Test/Downloads/checkout/Jsoup+46+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jsoup_46_fix/src/main/java/org/jsoup/nodes/Entities.java b/Users/SE4Test/Downloads/checkout/jsoup_46_buggy/src/main/java/org/jsoup/nodes/Entities.java
+index ad80489..6ccb84e 100644
+--- a/Users/SE4Test/Downloads/checkout/jsoup_46_fix/src/main/java/org/jsoup/nodes/Entities.java
++++ b/Users/SE4Test/Downloads/checkout/jsoup_46_buggy/src/main/java/org/jsoup/nodes/Entities.java
+@@ -115,7 +115,7 @@ public class Entities {
+                        if (escapeMode != EscapeMode.xhtml)
+                            accum.append("&nbsp;");
+                        else
+                            [-accum.append("&#xa0;");-]{+accum.append(c);+}
+                        break;
+                    case '<':
+                        if (!inAttribute)
+ 
+ 

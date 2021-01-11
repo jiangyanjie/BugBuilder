@@ -1,0 +1,22 @@
+/Users/SE4Test/Downloads/checkout/Mockito+36+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/mockito_36_fix/src/org/mockito/internal/invocation/Invocation.java b/Users/SE4Test/Downloads/checkout/mockito_36_buggy/src/org/mockito/internal/invocation/Invocation.java
+index 5e9b795..94d4612 100644
+--- a/Users/SE4Test/Downloads/checkout/mockito_36_fix/src/org/mockito/internal/invocation/Invocation.java
++++ b/Users/SE4Test/Downloads/checkout/mockito_36_buggy/src/org/mockito/internal/invocation/Invocation.java
+@@ -8,7 +8,6 @@ import java.util.*;
+
+import org.hamcrest.Matcher;
+import org.mockito.exceptions.PrintableInvocation;
+[-import org.mockito.exceptions.Reporter;-]
+import org.mockito.internal.debugging.Location;
+import org.mockito.internal.invocation.realmethod.RealMethod;
+import org.mockito.internal.matchers.*;
+@@ -200,9 +199,6 @@ public class Invocation implements PrintableInvocation, InvocationOnMock, Printi
+    }
+
+    public Object callRealMethod() throws Throwable {
+[-        if (this.getMethod().getDeclaringClass().isInterface()) {-]
+[-            new Reporter().cannotCallRealMethodOnInterface();-]
+[-        }-]
+        return realMethod.invoke(mock, rawArguments);
+    }

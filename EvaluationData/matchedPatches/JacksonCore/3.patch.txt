@@ -1,0 +1,16 @@
+/Users/SE4Test/Downloads/checkout/JacksonCore_+3+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackcore_3_fix/src/main/java/com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java b/Users/SE4Test/Downloads/checkout/jackcore_3_buggy/src/main/java/com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java
+index fba33c2..f89e661 100644
+--- a/Users/SE4Test/Downloads/checkout/jackcore_3_fix/src/main/java/com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java
++++ b/Users/SE4Test/Downloads/checkout/jackcore_3_buggy/src/main/java/com/fasterxml/jackson/core/json/UTF8StreamJsonParser.java
+@@ -122,9 +122,7 @@ public class UTF8StreamJsonParser
+        _inputBuffer = inputBuffer;
+        _inputPtr = start;
+        _inputEnd = end;
+[-        _currInputRowStart = start;-]
+        // If we have offset, need to omit that from byte offset, so:
+[-        _currInputProcessed = -start;-]
+        _bufferRecyclable = bufferRecyclable;
+    }
+
+ 

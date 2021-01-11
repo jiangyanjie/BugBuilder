@@ -1,0 +1,20 @@
+/Users/SE4Test/Downloads/checkout/Cli+29+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/Cli_29_fix/src/java/org/apache/commons/cli/Util.java b/Users/SE4Test/Downloads/checkout/Cli_29_buggy/src/java/org/apache/commons/cli/Util.java
+index bceee25..40f66f1 100644
+--- a/Users/SE4Test/Downloads/checkout/Cli_29_fix/src/java/org/apache/commons/cli/Util.java
++++ b/Users/SE4Test/Downloads/checkout/Cli_29_buggy/src/java/org/apache/commons/cli/Util.java
+@@ -62,10 +62,14 @@ class Util
+     */
+    static String stripLeadingAndTrailingQuotes(String str)
+    {
+        {+if (str.startsWith("\""))+}
+{+        {+}
+{+            str = str.substring(1, str.length());+}
+{+        }+}
+        int length = str.length();
+        if [-(length > 1 && str.startsWith("\"") && str.endsWith("\"") && str.substring(1, length - 1).indexOf('"') == -1)-]{+(str.endsWith("\""))+}
+        {
+            str = [-str.substring(1,-]{+str.substring(0,+} length - 1);
+        }
+        
+        return str;

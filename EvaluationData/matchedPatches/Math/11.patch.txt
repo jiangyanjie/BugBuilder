@@ -1,0 +1,15 @@
+/Users/SE4Test/Downloads/checkout/Math+11+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/math_11_fix/src/main/java/org/apache/commons/math3/distribution/MultivariateNormalDistribution.java b/Users/SE4Test/Downloads/checkout/math_11_buggy/src/main/java/org/apache/commons/math3/distribution/MultivariateNormalDistribution.java
+index fd18c28..1570681 100644
+--- a/Users/SE4Test/Downloads/checkout/math_11_fix/src/main/java/org/apache/commons/math3/distribution/MultivariateNormalDistribution.java
++++ b/Users/SE4Test/Downloads/checkout/math_11_buggy/src/main/java/org/apache/commons/math3/distribution/MultivariateNormalDistribution.java
+@@ -180,7 +180,7 @@ public class MultivariateNormalDistribution
+            throw new DimensionMismatchException(vals.length, dim);
+        }
+
+        return FastMath.pow(2 * FastMath.PI, [--0.5 * dim)-]{+-dim / 2)+} *
+            FastMath.pow(covarianceMatrixDeterminant, -0.5) *
+            getExponentTerm(vals);
+    }
+ 
+ 

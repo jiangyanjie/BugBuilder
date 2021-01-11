@@ -1,0 +1,13 @@
+/Users/SE4Test/Downloads/checkout/JacksonDatabind+1+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackdata_1_fix/src/main/java/com/fasterxml/jackson/databind/ser/BeanPropertyWriter.java b/Users/SE4Test/Downloads/checkout/jackdata_1_buggy/src/main/java/com/fasterxml/jackson/databind/ser/BeanPropertyWriter.java
+index 32ce099..45db172 100644
+--- a/Users/SE4Test/Downloads/checkout/jackdata_1_fix/src/main/java/com/fasterxml/jackson/databind/ser/BeanPropertyWriter.java
++++ b/Users/SE4Test/Downloads/checkout/jackdata_1_buggy/src/main/java/com/fasterxml/jackson/databind/ser/BeanPropertyWriter.java
+@@ -589,7 +589,6 @@ public class BeanPropertyWriter
+            } else { // can NOT suppress entries in tabular output
+                jgen.writeNull();
+            }
+[-            return;-]
+        }
+        // otherwise find serializer to use
+        JsonSerializer<Object> ser = _serializer;

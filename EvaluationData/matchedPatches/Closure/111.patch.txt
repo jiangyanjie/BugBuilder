@@ -1,0 +1,15 @@
+/Users/SE4Test/Downloads/checkout/Closure+111+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_111_fix/src/com/google/javascript/jscomp/type/ClosureReverseAbstractInterpreter.java b/Users/SE4Test/Downloads/checkout/closure_111_buggy/src/com/google/javascript/jscomp/type/ClosureReverseAbstractInterpreter.java
+index e3c599d..1706e34 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_111_fix/src/com/google/javascript/jscomp/type/ClosureReverseAbstractInterpreter.java
++++ b/Users/SE4Test/Downloads/checkout/closure_111_buggy/src/com/google/javascript/jscomp/type/ClosureReverseAbstractInterpreter.java
+@@ -51,8 +51,7 @@ public class ClosureReverseAbstractInterpreter
+      new RestrictByTrueTypeOfResultVisitor() {
+        @Override
+        protected JSType caseTopType(JSType topType) {
+          return[-topType.isAllType() ?-]
+[-              getNativeType(ARRAY_TYPE) :-] topType;
+        }
+
+        @Override
+ 

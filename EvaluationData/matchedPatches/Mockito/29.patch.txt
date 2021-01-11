@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/Mockito+29+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/mockito_29_fix/src/org/mockito/internal/matchers/Same.java b/Users/SE4Test/Downloads/checkout/mockito_29_buggy/src/org/mockito/internal/matchers/Same.java
+index b8267b9..6c172fe 100644
+--- a/Users/SE4Test/Downloads/checkout/mockito_29_fix/src/org/mockito/internal/matchers/Same.java
++++ b/Users/SE4Test/Downloads/checkout/mockito_29_buggy/src/org/mockito/internal/matchers/Same.java
+@@ -26,7 +26,7 @@ public class Same extends ArgumentMatcher<Object> implements Serializable {
+    public void describeTo(Description description) {
+        description.appendText("same(");
+        appendQuoting(description);
+        [-description.appendText(wanted == null ? "null" : wanted.toString());-]{+description.appendText(wanted.toString());+}
+        appendQuoting(description);
+        description.appendText(")");
+    }
+ 

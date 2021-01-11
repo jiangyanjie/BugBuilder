@@ -1,0 +1,16 @@
+/Users/SE4Test/Downloads/checkout/Codec_+2+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/codec_2_fix/src/java/org/apache/commons/codec/binary/Base64.java b/Users/SE4Test/Downloads/checkout/codec_2_buggy/src/java/org/apache/commons/codec/binary/Base64.java
+index dc2ecfc..c00fbe5 100644
+--- a/Users/SE4Test/Downloads/checkout/codec_2_fix/src/java/org/apache/commons/codec/binary/Base64.java
++++ b/Users/SE4Test/Downloads/checkout/codec_2_buggy/src/java/org/apache/commons/codec/binary/Base64.java
+@@ -443,7 +443,7 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
+                    }
+                    break;
+            }
+            if (lineLength >[-0 && pos >-] 0) {
+                System.arraycopy(lineSeparator, 0, buf, pos, lineSeparator.length);
+                pos += lineSeparator.length;
+            }
+ 
+ 
+ 

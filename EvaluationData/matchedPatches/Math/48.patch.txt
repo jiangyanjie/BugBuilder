@@ -1,0 +1,19 @@
+/Users/SE4Test/Downloads/checkout/Math+48+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/math_48_fix/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java b/Users/SE4Test/Downloads/checkout/math_48_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+index 0347525..8a667da 100644
+--- a/Users/SE4Test/Downloads/checkout/math_48_fix/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
++++ b/Users/SE4Test/Downloads/checkout/math_48_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+@@ -186,9 +186,6 @@ public abstract class BaseSecantSolver
+                case REGULA_FALSI:
+                    // Detect early that algorithm is stuck, instead of waiting
+                    // for the maximum number of iterations to be exceeded.
+[-                    if (x == x1) {-]
+[-                        throw new ConvergenceException();-]
+[-                    }-]
+                    break;
+                default:
+                    // Should never happen.
+ 
+ 
+ 
+ 

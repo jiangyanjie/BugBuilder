@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/Closure+36+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_36_fix/src/com/google/javascript/jscomp/InlineVariables.java b/Users/SE4Test/Downloads/checkout/closure_36_buggy/src/com/google/javascript/jscomp/InlineVariables.java
+index 47b8e8a..0b4b3de 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_36_fix/src/com/google/javascript/jscomp/InlineVariables.java
++++ b/Users/SE4Test/Downloads/checkout/closure_36_buggy/src/com/google/javascript/jscomp/InlineVariables.java
+@@ -572,9 +572,6 @@ class InlineVariables implements CompilerPass {
+
+          // issue 668: Don't inline singleton getter methods
+          // calls as this confused class removing logic.
+[-          if (convention.getSingletonGetterClassName(callNode) != null) {-]
+[-            return false;-]
+[-          }-]
+        }
+      }

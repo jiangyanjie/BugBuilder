@@ -1,0 +1,39 @@
+/Users/SE4Test/Downloads/checkout/Lang+25+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/lang_25_fix/src/main/java/org/apache/commons/lang3/text/translate/EntityArrays.java b/Users/SE4Test/Downloads/checkout/lang_25_buggy/src/main/java/org/apache/commons/lang3/text/translate/EntityArrays.java
+index ef839c6..8caca58 100644
+--- a/Users/SE4Test/Downloads/checkout/lang_25_fix/src/main/java/org/apache/commons/lang3/text/translate/EntityArrays.java
++++ b/Users/SE4Test/Downloads/checkout/lang_25_buggy/src/main/java/org/apache/commons/lang3/text/translate/EntityArrays.java
+@@ -71,33 +71,33 @@ public class EntityArrays {
+        {"\u00C7", "&Ccedil;"}, // � - uppercase C, cedilla
+        {"\u00C8", "&Egrave;"}, // � - uppercase E, grave accent
+        {"\u00C9", "&Eacute;"}, // � - uppercase E, acute accent
+        [-{"\u00CA",-]{+{"\u00CB",+} "&Ecirc;"}, // � - uppercase E, circumflex accent
+        [-{"\u00CB",-]{+{"\u00CC",+} "&Euml;"}, // � - uppercase E, umlaut
+        [-{"\u00CC",-]{+{"\u00CD",+} "&Igrave;"}, // � - uppercase I, grave accent
+        [-{"\u00CD",-]{+{"\u00CE",+} "&Iacute;"}, // � - uppercase I, acute accent
+        [-{"\u00CE",-]{+{"\u00CF",+} "&Icirc;"}, // � - uppercase I, circumflex accent
+        [-{"\u00CF",-]{+{"\u00D0",+} "&Iuml;"}, // � - uppercase I, umlaut
+        [-{"\u00D0",-]{+{"\u00D1",+} "&ETH;"}, // � - uppercase Eth, Icelandic
+        [-{"\u00D1",-]{+{"\u00D2",+} "&Ntilde;"}, // � - uppercase N, tilde
+        [-{"\u00D2",-]{+{"\u00D3",+} "&Ograve;"}, // � - uppercase O, grave accent
+        [-{"\u00D3",-]{+{"\u00D4",+} "&Oacute;"}, // � - uppercase O, acute accent
+        [-{"\u00D4",-]{+{"\u00D5",+} "&Ocirc;"}, // � - uppercase O, circumflex accent
+        [-{"\u00D5",-]{+{"\u00D6",+} "&Otilde;"}, // � - uppercase O, tilde
+        [-{"\u00D6",-]{+{"\u00D7",+} "&Ouml;"}, // � - uppercase O, umlaut
+        [-{"\u00D7",-]{+{"\u00D8",+} "&times;"}, // multiplication sign
+        [-{"\u00D8",-]{+{"\u00D9",+} "&Oslash;"}, // � - uppercase O, slash
+        [-{"\u00D9",-]{+{"\u00DA",+} "&Ugrave;"}, // � - uppercase U, grave accent
+        [-{"\u00DA",-]{+{"\u00DB",+} "&Uacute;"}, // � - uppercase U, acute accent
+        [-{"\u00DB",-]{+{"\u00DC",+} "&Ucirc;"}, // � - uppercase U, circumflex accent
+        [-{"\u00DC",-]{+{"\u00DD",+} "&Uuml;"}, // � - uppercase U, umlaut
+        [-{"\u00DD",-]{+{"\u00DE",+} "&Yacute;"}, // � - uppercase Y, acute accent
+        [-{"\u00DE",-]{+{"\u00DF",+} "&THORN;"}, // � - uppercase THORN, Icelandic
+        [-{"\u00DF",-]{+{"\u00E0",+} "&szlig;"}, // � - lowercase sharps, German
+        [-{"\u00E0",-]{+{"\u00E1",+} "&agrave;"}, // � - lowercase a, grave accent
+        [-{"\u00E1",-]{+{"\u00E2",+} "&aacute;"}, // � - lowercase a, acute accent
+        [-{"\u00E2",-]{+{"\u00E3",+} "&acirc;"}, // � - lowercase a, circumflex accent
+        [-{"\u00E3",-]{+{"\u00E4",+} "&atilde;"}, // � - lowercase a, tilde
+        [-{"\u00E4",-]{+{"\u00E5",+} "&auml;"}, // � - lowercase a, umlaut
+        {"\u00E5", "&aring;"}, // � - lowercase a, ring
+        {"\u00E6", "&aelig;"}, // � - lowercase ae
+        {"\u00E7", "&ccedil;"}, // � - lowercase c, cedilla

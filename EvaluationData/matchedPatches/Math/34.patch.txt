@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/Math+34+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/math_34_fix/src/main/java/org/apache/commons/math3/genetics/ListPopulation.java b/Users/SE4Test/Downloads/checkout/math_34_buggy/src/main/java/org/apache/commons/math3/genetics/ListPopulation.java
+index 3f3919c..1eb0053 100644
+--- a/Users/SE4Test/Downloads/checkout/math_34_fix/src/main/java/org/apache/commons/math3/genetics/ListPopulation.java
++++ b/Users/SE4Test/Downloads/checkout/math_34_buggy/src/main/java/org/apache/commons/math3/genetics/ListPopulation.java
+@@ -206,6 +206,6 @@ public abstract class ListPopulation implements Population {
+     * @return chromosome iterator
+     */
+    public Iterator<Chromosome> iterator() {
+        return [-getChromosomes().iterator();-]{+chromosomes.iterator();+}
+    }
+}
+ 
+ 

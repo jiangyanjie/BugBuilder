@@ -1,0 +1,13 @@
+/Users/SE4Test/Downloads/checkout/JacksonCore_+26+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackcore_26_fix/src/main/java/com/fasterxml/jackson/core/json/async/NonBlockingJsonParser.java b/Users/SE4Test/Downloads/checkout/jackcore_26_buggy/src/main/java/com/fasterxml/jackson/core/json/async/NonBlockingJsonParser.java
+index c2817af..5046b37 100644
+--- a/Users/SE4Test/Downloads/checkout/jackcore_26_fix/src/main/java/com/fasterxml/jackson/core/json/async/NonBlockingJsonParser.java
++++ b/Users/SE4Test/Downloads/checkout/jackcore_26_buggy/src/main/java/com/fasterxml/jackson/core/json/async/NonBlockingJsonParser.java
+@@ -105,7 +105,6 @@ public class NonBlockingJsonParser
+        _currInputRowStart = start - (_inputEnd - _currInputRowStart);
+
+        // And then update buffer settings
+[-        _currBufferStart = start;-]
+        _inputBuffer = buf;
+        _inputPtr = start;
+        _inputEnd = end;

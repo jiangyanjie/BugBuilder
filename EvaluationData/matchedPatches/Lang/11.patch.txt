@@ -1,0 +1,16 @@
+/Users/SE4Test/Downloads/checkout/Lang+11+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/lang_11_fix/src/main/java/org/apache/commons/lang3/RandomStringUtils.java b/Users/SE4Test/Downloads/checkout/lang_11_buggy/src/main/java/org/apache/commons/lang3/RandomStringUtils.java
+index 9dfee22..a799057 100644
+--- a/Users/SE4Test/Downloads/checkout/lang_11_fix/src/main/java/org/apache/commons/lang3/RandomStringUtils.java
++++ b/Users/SE4Test/Downloads/checkout/lang_11_buggy/src/main/java/org/apache/commons/lang3/RandomStringUtils.java
+@@ -242,10 +242,6 @@ public class RandomStringUtils {
+                    start = ' ';                
+                }
+            }
+[-        } else {-]
+[-            if (end <= start) {-]
+[-                throw new IllegalArgumentException("Parameter end (" + end + ") must be greater than start (" + start + ")");-]
+[-            }-]
+        }
+
+        char[] buffer = new char[count];

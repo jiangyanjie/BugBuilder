@@ -1,0 +1,20 @@
+/Users/SE4Test/Downloads/checkout/Gson_+11+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/gson_11_fix/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java b/Users/SE4Test/Downloads/checkout/gson_11_buggy/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java
+index 31beb5d..6a51c64 100644
+--- a/Users/SE4Test/Downloads/checkout/gson_11_fix/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java
++++ b/Users/SE4Test/Downloads/checkout/gson_11_buggy/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java
+@@ -368,7 +368,6 @@ public final class TypeAdapters {
+        in.nextNull();
+        return null;
+      case NUMBER:
+[-      case STRING:-]
+        return new LazilyParsedNumber(in.nextString());
+      default:
+        throw new JsonSyntaxException("Expecting number, got: " + jsonToken);
+ 
+ 
+ 
+ 
+ 
+ 
+ 

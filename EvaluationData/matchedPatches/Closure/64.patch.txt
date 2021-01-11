@@ -1,0 +1,32 @@
+/Users/SE4Test/Downloads/checkout/Closure+64+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_64_fix/src/com/google/javascript/jscomp/Compiler.java b/Users/SE4Test/Downloads/checkout/closure_64_buggy/src/com/google/javascript/jscomp/Compiler.java
+index 45d88ba..71f76d8 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_64_fix/src/com/google/javascript/jscomp/Compiler.java
++++ b/Users/SE4Test/Downloads/checkout/closure_64_buggy/src/com/google/javascript/jscomp/Compiler.java
+@@ -1429,7 +1429,7 @@ public class Compiler extends AbstractCompiler {
+
+        // if LanguageMode is ECMASCRIPT5_STRICT, only print 'use strict'
+        // for the first input file
+        String code = toSource(root, [-sourceMap, inputSeqNum == 0);-]{+sourceMap);+}
+        if (!code.isEmpty()) {
+          cb.append(code);
+
+@@ -1458,19 +1458,19 @@ public class Compiler extends AbstractCompiler {
+  @Override
+  String toSource(Node n) {
+    initCompilerOptionsIfTesting();
+    return toSource(n, [-null, true);-]{+null);+}
+  }
+
+  /**
+   * Generates JavaScript source code for an AST.
+   */
+  private String toSource(Node n, SourceMap [-sourceMap, boolean firstOutput)-]{+sourceMap)+} {
+    CodePrinter.Builder builder = new CodePrinter.Builder(n);
+    builder.setPrettyPrint(options.prettyPrint);
+    builder.setLineBreak(options.lineBreak);
+    builder.setSourceMap(sourceMap);
+    builder.setSourceMapDetailLevel(options.sourceMapDetailLevel);
+    [-builder.setTagAsStrict(firstOutput &&-]{+builder.setTagAsStrict(+}
+        options.getLanguageOut() == LanguageMode.ECMASCRIPT5_STRICT);
+    builder.setLineLengthThreshold(options.lineLengthThreshold);

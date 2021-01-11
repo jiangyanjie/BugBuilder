@@ -1,0 +1,17 @@
+/Users/SE4Test/Downloads/checkout/Closure+104+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_104_fix/src/com/google/javascript/rhino/jstype/UnionType.java b/Users/SE4Test/Downloads/checkout/closure_104_buggy/src/com/google/javascript/rhino/jstype/UnionType.java
+index 6f0d798..a9c9a0a 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_104_fix/src/com/google/javascript/rhino/jstype/UnionType.java
++++ b/Users/SE4Test/Downloads/checkout/closure_104_buggy/src/com/google/javascript/rhino/jstype/UnionType.java
+@@ -288,7 +288,7 @@ public class UnionType extends JSType {
+      builder.addAlternate(that);
+    }
+    JSType result = builder.build();
+    if [-(!result.isNoType())-]{+(result != null)+} {
+      return result;
+    } else if (this.isObject() && that.isObject()) {
+      return getNativeType(JSTypeNative.NO_OBJECT_TYPE);
+ 
+ 
+ 
+ 

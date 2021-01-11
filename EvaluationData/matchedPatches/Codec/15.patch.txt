@@ -1,0 +1,22 @@
+/Users/SE4Test/Downloads/checkout/Codec_+15+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/codec_15_fix/src/main/java/org/apache/commons/codec/language/Soundex.java b/Users/SE4Test/Downloads/checkout/codec_15_buggy/src/main/java/org/apache/commons/codec/language/Soundex.java
+index 404384d..71d1f07 100644
+--- a/Users/SE4Test/Downloads/checkout/codec_15_fix/src/main/java/org/apache/commons/codec/language/Soundex.java
++++ b/Users/SE4Test/Downloads/checkout/codec_15_buggy/src/main/java/org/apache/commons/codec/language/Soundex.java
+@@ -185,14 +185,13 @@ public class Soundex implements StringEncoder {
+        final char mappedChar = this.map(str.charAt(index));
+        // HW rule check
+        if (index > 1 && mappedChar != '0') {
+            [-for (int i=index-1 ; i>=0 ; i--)-]{+final char hwChar = str.charAt(index - 1);+}
+{+            if ('H' == hwChar || 'W' == hwChar)+} {
+                final char [-prevChar-]{+preHWChar = str.charAt(index - 2);+}
+{+                final char firstCode+} = [-str.charAt(i);-]{+this.map(preHWChar);+}
+                if [-(this.map(prevChar)==mappedChar)-]{+(firstCode == mappedChar || 'H' == preHWChar || 'W' == preHWChar)+} {
+                    return 0;
+                }
+[-                if ('H'!=prevChar && 'W'!=prevChar) {-]
+[-                    break;-]
+[-                }-]
+            }
+        }
+        return mappedChar;

@@ -1,0 +1,34 @@
+/Users/SE4Test/Downloads/checkout/Gson_+7+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/gson_7_fix/gson/src/main/java/com/google/gson/stream/JsonReader.java b/Users/SE4Test/Downloads/checkout/gson_7_buggy/gson/src/main/java/com/google/gson/stream/JsonReader.java
+index 7a5e9cb..d375ba1 100644
+--- a/Users/SE4Test/Downloads/checkout/gson_7_fix/gson/src/main/java/com/google/gson/stream/JsonReader.java
++++ b/Users/SE4Test/Downloads/checkout/gson_7_buggy/gson/src/main/java/com/google/gson/stream/JsonReader.java
+@@ -951,12 +951,8 @@ public class JsonReader implements Closeable {
+    if (p == PEEKED_NUMBER) {
+      peekedString = new String(buffer, pos, peekedNumberLength);
+      pos += peekedNumberLength;
+    } else if (p == PEEKED_SINGLE_QUOTED || p == [-PEEKED_DOUBLE_QUOTED || p == PEEKED_UNQUOTED) {-]
+[-      if (p == PEEKED_UNQUOTED) {-]
+[-        peekedString = nextUnquotedValue();-]
+[-      } else-]{+PEEKED_DOUBLE_QUOTED)+} {
+        peekedString = nextQuotedValue(p == PEEKED_SINGLE_QUOTED ? '\'' : '"');
+[-      }-]
+      try {
+        long result = Long.parseLong(peekedString);
+        peeked = PEEKED_NONE;
+@@ -1183,12 +1179,8 @@ public class JsonReader implements Closeable {
+    if (p == PEEKED_NUMBER) {
+      peekedString = new String(buffer, pos, peekedNumberLength);
+      pos += peekedNumberLength;
+    } else if (p == PEEKED_SINGLE_QUOTED || p == [-PEEKED_DOUBLE_QUOTED || p == PEEKED_UNQUOTED) {-]
+[-      if (p == PEEKED_UNQUOTED) {-]
+[-        peekedString = nextUnquotedValue();-]
+[-      } else-]{+PEEKED_DOUBLE_QUOTED)+} {
+        peekedString = nextQuotedValue(p == PEEKED_SINGLE_QUOTED ? '\'' : '"');
+[-      }-]
+      try {
+        result = Integer.parseInt(peekedString);
+        peeked = PEEKED_NONE;
+ 
+ 
+ 

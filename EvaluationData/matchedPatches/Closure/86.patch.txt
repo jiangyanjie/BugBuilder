@@ -1,0 +1,13 @@
+/Users/SE4Test/Downloads/checkout/Closure+86+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_86_fix/src/com/google/javascript/jscomp/NodeUtil.java b/Users/SE4Test/Downloads/checkout/closure_86_buggy/src/com/google/javascript/jscomp/NodeUtil.java
+index 9049aae..dd78f90 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_86_fix/src/com/google/javascript/jscomp/NodeUtil.java
++++ b/Users/SE4Test/Downloads/checkout/closure_86_buggy/src/com/google/javascript/jscomp/NodeUtil.java
+@@ -2462,7 +2462,7 @@ public final class NodeUtil {
+        // TODO(nicksantos): This needs to be changed so that it
+        // returns true iff we're sure the value was never aliased from inside
+        // the constructor (similar to callHasLocalResult)
+        return [-false;-]{+true;+}
+      case Token.FUNCTION:
+      case Token.REGEXP:
+      case Token.ARRAYLIT:

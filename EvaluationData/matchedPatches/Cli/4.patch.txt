@@ -1,0 +1,20 @@
+/Users/SE4Test/Downloads/checkout/Cli+4+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/Cli_4_fix/src/java/org/apache/commons/cli/Parser.java b/Users/SE4Test/Downloads/checkout/Cli_4_buggy/src/java/org/apache/commons/cli/Parser.java
+index 2843ef1..35b025e 100644
+--- a/Users/SE4Test/Downloads/checkout/Cli_4_fix/src/java/org/apache/commons/cli/Parser.java
++++ b/Users/SE4Test/Downloads/checkout/Cli_4_buggy/src/java/org/apache/commons/cli/Parser.java
+@@ -295,9 +295,7 @@ public abstract class Parser implements CommandLineParser {
+        if (requiredOptions.size() > 0)
+        {
+            Iterator iter = requiredOptions.iterator();
+            StringBuffer buff = new [-StringBuffer("Missing required option");-]{+StringBuffer();+}
+[-            buff.append(requiredOptions.size() == 1 ? "" : "s");-]
+[-            buff.append(": ");-]
+
+
+            // loop through the required options
+ 
+ 
+ 
+ 
+ 

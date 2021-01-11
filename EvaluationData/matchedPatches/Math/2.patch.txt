@@ -1,0 +1,13 @@
+/Users/SE4Test/Downloads/checkout/Math+2+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/math_2_fix/src/main/java/org/apache/commons/math3/distribution/HypergeometricDistribution.java b/Users/SE4Test/Downloads/checkout/math_2_buggy/src/main/java/org/apache/commons/math3/distribution/HypergeometricDistribution.java
+index 81e180c..2769127 100644
+--- a/Users/SE4Test/Downloads/checkout/math_2_fix/src/main/java/org/apache/commons/math3/distribution/HypergeometricDistribution.java
++++ b/Users/SE4Test/Downloads/checkout/math_2_buggy/src/main/java/org/apache/commons/math3/distribution/HypergeometricDistribution.java
+@@ -265,7 +265,7 @@ public class HypergeometricDistribution extends AbstractIntegerDistribution {
+     * size {@code n}, the mean is {@code n * m / N}.
+     */
+    public double getNumericalMean() {
+        return [-getSampleSize()-]{+(double) (getSampleSize()+} * [-(getNumberOfSuccesses()-]{+getNumberOfSuccesses())+} / (double) [-getPopulationSize());-]{+getPopulationSize();+}
+    }
+
+    /**

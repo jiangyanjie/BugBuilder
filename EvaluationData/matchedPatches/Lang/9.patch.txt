@@ -1,0 +1,16 @@
+/Users/SE4Test/Downloads/checkout/Lang+9+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/lang_9_fix/src/main/java/org/apache/commons/lang3/time/FastDateParser.java b/Users/SE4Test/Downloads/checkout/lang_9_buggy/src/main/java/org/apache/commons/lang3/time/FastDateParser.java
+index 38857c7..8df302f 100644
+--- a/Users/SE4Test/Downloads/checkout/lang_9_fix/src/main/java/org/apache/commons/lang3/time/FastDateParser.java
++++ b/Users/SE4Test/Downloads/checkout/lang_9_buggy/src/main/java/org/apache/commons/lang3/time/FastDateParser.java
+@@ -141,9 +141,6 @@ public class FastDateParser implements DateParser, Serializable {
+            currentFormatField= nextFormatField;
+            currentStrategy= nextStrategy;
+        }
+[-        if (patternMatcher.regionStart() != patternMatcher.regionEnd()) {-]
+[-            throw new IllegalArgumentException("Failed to parse \""+pattern+"\" ; gave up at index "+patternMatcher.regionStart());-]
+[-        }-]
+        if(currentStrategy.addRegex(this, regex)) {
+            collector.add(currentStrategy);
+        }
+ 

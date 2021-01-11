@@ -1,0 +1,13 @@
+/Users/SE4Test/Downloads/checkout/Jsoup+45+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jsoup_45_fix/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java b/Users/SE4Test/Downloads/checkout/jsoup_45_buggy/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java
+index 4ac8870..4a58fdf 100644
+--- a/Users/SE4Test/Downloads/checkout/jsoup_45_fix/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java
++++ b/Users/SE4Test/Downloads/checkout/jsoup_45_buggy/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java
+@@ -391,7 +391,7 @@ public class HtmlTreeBuilder extends TreeBuilder {
+            if ("select".equals(name)) {
+                transition(HtmlTreeBuilderState.InSelect);
+                break; // frag
+            } else if (("td".equals(name) || [-"th".equals(name)-]{+"td".equals(name)+} && !last)) {
+                transition(HtmlTreeBuilderState.InCell);
+                break;
+            } else if ("tr".equals(name)) {

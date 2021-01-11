@@ -1,0 +1,27 @@
+/Users/SE4Test/Downloads/checkout/JxPath+1+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jxpath_1_fix/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java b/Users/SE4Test/Downloads/checkout/jxpath_1_buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+index 113b410..aef2de6 100644
+--- a/Users/SE4Test/Downloads/checkout/jxpath_1_fix/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
++++ b/Users/SE4Test/Downloads/checkout/jxpath_1_buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+@@ -113,8 +113,7 @@ public class DOMNodePointer extends NodePointer {
+            int nodeType = node.getNodeType();
+            switch (((NodeTypeTest) test).getNodeType()) {
+                case Compiler.NODE_TYPE_NODE :
+                    return nodeType == [-Node.ELEMENT_NODE-]
+[-                            || nodeType == Node.DOCUMENT_NODE;-]{+Node.ELEMENT_NODE;+}
+                case Compiler.NODE_TYPE_TEXT :
+                    return nodeType == Node.CDATA_SECTION_NODE
+                        || nodeType == Node.TEXT_NODE;
+diff --git a/Users/SE4Test/Downloads/checkout/jxpath_1_fix/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMNodePointer.java b/Users/SE4Test/Downloads/checkout/jxpath_1_buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMNodePointer.java
+index 32ffc1a..d151bed 100644
+--- a/Users/SE4Test/Downloads/checkout/jxpath_1_fix/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMNodePointer.java
++++ b/Users/SE4Test/Downloads/checkout/jxpath_1_buggy/src/java/org/apache/commons/jxpath/ri/model/jdom/JDOMNodePointer.java
+@@ -373,7 +373,7 @@ public class JDOMNodePointer extends NodePointer {
+        else if (test instanceof NodeTypeTest) {
+            switch (((NodeTypeTest) test).getNodeType()) {
+                case Compiler.NODE_TYPE_NODE :
+                    return [-(node-]{+node+} instanceof [-Element) || (node instanceof Document);-]{+Element;+}
+                case Compiler.NODE_TYPE_TEXT :
+                    return (node instanceof Text) || (node instanceof CDATA);
+                case Compiler.NODE_TYPE_COMMENT :
+ 

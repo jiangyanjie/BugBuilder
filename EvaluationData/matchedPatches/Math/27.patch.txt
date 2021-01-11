@@ -1,0 +1,13 @@
+/Users/SE4Test/Downloads/checkout/Math+27+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/math_27_fix/src/main/java/org/apache/commons/math3/fraction/Fraction.java b/Users/SE4Test/Downloads/checkout/math_27_buggy/src/main/java/org/apache/commons/math3/fraction/Fraction.java
+index f81ff0a..f84218e 100644
+--- a/Users/SE4Test/Downloads/checkout/math_27_fix/src/main/java/org/apache/commons/math3/fraction/Fraction.java
++++ b/Users/SE4Test/Downloads/checkout/math_27_buggy/src/main/java/org/apache/commons/math3/fraction/Fraction.java
+@@ -594,7 +594,7 @@ public class Fraction
+     * @return the fraction percentage as a <tt>double</tt>.
+     */
+    public double percentageValue() {
+        return [-100 * doubleValue();-]{+multiply(100).doubleValue();+}
+    }
+
+    /**

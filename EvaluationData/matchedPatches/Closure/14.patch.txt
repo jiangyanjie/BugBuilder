@@ -1,0 +1,17 @@
+/Users/SE4Test/Downloads/checkout/Closure+14+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_14_fix/src/com/google/javascript/jscomp/ControlFlowAnalysis.java b/Users/SE4Test/Downloads/checkout/closure_14_buggy/src/com/google/javascript/jscomp/ControlFlowAnalysis.java
+index 980deff..5c6927f 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_14_fix/src/com/google/javascript/jscomp/ControlFlowAnalysis.java
++++ b/Users/SE4Test/Downloads/checkout/closure_14_buggy/src/com/google/javascript/jscomp/ControlFlowAnalysis.java
+@@ -764,7 +764,7 @@ final class ControlFlowAnalysis implements Callback, CompilerPass {
+        } else if (parent.getLastChild() == node){
+          if (cfa != null) {
+            for (Node finallyNode : cfa.finallyMap.get(parent)) {
+              cfa.createEdge(fromNode, [-Branch.ON_EX,-]{+Branch.UNCOND,+} finallyNode);
+            }
+          }
+          return computeFollowNode(fromNode, parent, cfa);
+ 
+ 
+ 
+ 

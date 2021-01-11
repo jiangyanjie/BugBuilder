@@ -1,0 +1,15 @@
+/Users/SE4Test/Downloads/checkout/Closure+83+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_83_fix/src/com/google/javascript/jscomp/CommandLineRunner.java b/Users/SE4Test/Downloads/checkout/closure_83_buggy/src/com/google/javascript/jscomp/CommandLineRunner.java
+index 4c3b258..f146b0e 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_83_fix/src/com/google/javascript/jscomp/CommandLineRunner.java
++++ b/Users/SE4Test/Downloads/checkout/closure_83_buggy/src/com/google/javascript/jscomp/CommandLineRunner.java
+@@ -331,10 +331,7 @@ public class CommandLineRunner extends
+
+      @Override
+      public int parseArguments(Parameters params) throws CmdLineException {
+        String param =[-null;-]
+[-        try {-]
+[-          param =-] params.getParameter(0);[-} catch (CmdLineException e) {}-]
+
+        if (param == null) {
+          setter.addValue(true);

@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/Closure+66+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_66_fix/src/com/google/javascript/jscomp/TypeCheck.java b/Users/SE4Test/Downloads/checkout/closure_66_buggy/src/com/google/javascript/jscomp/TypeCheck.java
+index d3def01..edb7805 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_66_fix/src/com/google/javascript/jscomp/TypeCheck.java
++++ b/Users/SE4Test/Downloads/checkout/closure_66_buggy/src/com/google/javascript/jscomp/TypeCheck.java
+@@ -513,9 +513,7 @@ public class TypeCheck implements NodeTraversal.Callback, CompilerPass {
+        // Object literal keys are handled with OBJECTLIT
+        if (!NodeUtil.isObjectLitKey(n, n.getParent())) {
+          ensureTyped(t, n, STRING_TYPE);
+[-        } else {-]
+          // Object literal keys are not typeable
+[-          typeable = false;-]
+        }
+        break;

@@ -1,0 +1,19 @@
+/Users/SE4Test/Downloads/checkout/Math+8+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/math_8_fix/src/main/java/org/apache/commons/math3/distribution/DiscreteDistribution.java b/Users/SE4Test/Downloads/checkout/math_8_buggy/src/main/java/org/apache/commons/math3/distribution/DiscreteDistribution.java
+index 879eb2a..5cb0e43 100644
+--- a/Users/SE4Test/Downloads/checkout/math_8_fix/src/main/java/org/apache/commons/math3/distribution/DiscreteDistribution.java
++++ b/Users/SE4Test/Downloads/checkout/math_8_buggy/src/main/java/org/apache/commons/math3/distribution/DiscreteDistribution.java
+@@ -178,13 +178,13 @@ public class DiscreteDistribution<T> {
+     * @throws NotStrictlyPositiveException if {@code sampleSize} is not
+     * positive.
+     */
+    public [-Object[]-]{+T[]+} sample(int sampleSize) throws NotStrictlyPositiveException {
+        if (sampleSize <= 0) {
+            throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                    sampleSize);
+        }
+
+        final [-Object[] out-]{+T[]out+} = [-new Object[sampleSize];-]{+(T[]) java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize);+}
+
+        for (int i = 0; i < sampleSize; i++) {
+            out[i] = sample();

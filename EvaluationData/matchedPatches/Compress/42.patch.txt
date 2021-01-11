@@ -1,0 +1,25 @@
+/Users/SE4Test/Downloads/checkout/Compress_+42+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/compress_42_fix/src/main/java/org/apache/commons/compress/archivers/zip/UnixStat.java b/Users/SE4Test/Downloads/checkout/compress_42_buggy/src/main/java/org/apache/commons/compress/archivers/zip/UnixStat.java
+index a1b20be..8fc3606 100644
+--- a/Users/SE4Test/Downloads/checkout/compress_42_fix/src/main/java/org/apache/commons/compress/archivers/zip/UnixStat.java
++++ b/Users/SE4Test/Downloads/checkout/compress_42_buggy/src/main/java/org/apache/commons/compress/archivers/zip/UnixStat.java
+@@ -32,7 +32,6 @@ public interface UnixStat {
+     * Bits used to indicate the filesystem object type.
+     * @since 1.14
+     */
+[-    int FILE_TYPE_FLAG = 0170000;-]
+    /**
+     * Indicates symbolic links.
+     */
+diff --git a/Users/SE4Test/Downloads/checkout/compress_42_fix/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java b/Users/SE4Test/Downloads/checkout/compress_42_buggy/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java
+index 2abd22b..5030da5 100644
+--- a/Users/SE4Test/Downloads/checkout/compress_42_fix/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java
++++ b/Users/SE4Test/Downloads/checkout/compress_42_buggy/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java
+@@ -294,7 +294,7 @@ public class ZipArchiveEntry extends java.util.zip.ZipEntry
+     * @return true if the entry represents a unix symlink, false otherwise.
+     */
+    public boolean isUnixSymlink() {
+        return (getUnixMode() & [-UnixStat.FILE_TYPE_FLAG)-]{+UnixStat.LINK_FLAG)+} == UnixStat.LINK_FLAG;
+    }
+
+    /**

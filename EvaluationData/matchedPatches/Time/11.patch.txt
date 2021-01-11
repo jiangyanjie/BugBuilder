@@ -1,0 +1,18 @@
+/Users/SE4Test/Downloads/checkout/Time+11+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/time_11_fix/src/main/java/org/joda/time/tz/ZoneInfoCompiler.java b/Users/SE4Test/Downloads/checkout/time_11_buggy/src/main/java/org/joda/time/tz/ZoneInfoCompiler.java
+index 64da5ea..6efe071 100644
+--- a/Users/SE4Test/Downloads/checkout/time_11_fix/src/main/java/org/joda/time/tz/ZoneInfoCompiler.java
++++ b/Users/SE4Test/Downloads/checkout/time_11_buggy/src/main/java/org/joda/time/tz/ZoneInfoCompiler.java
+@@ -65,11 +65,10 @@ public class ZoneInfoCompiler {
+
+    static Chronology cLenientISO;
+
+    static ThreadLocal<Boolean> cVerbose = new [-ThreadLocal<Boolean>() {-]
+[-        protected Boolean initialValue()-]{+ThreadLocal<Boolean>();+}
+{+    static+} {
+        [-return Boolean.FALSE;-]{+cVerbose.set(Boolean.FALSE);+}
+    }[-};-]
+
+    /**
+     * Gets a flag indicating that verbose logging is required.
+ 

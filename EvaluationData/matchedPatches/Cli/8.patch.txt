@@ -1,0 +1,13 @@
+/Users/SE4Test/Downloads/checkout/Cli+8+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/Cli_8_fix/src/java/org/apache/commons/cli/HelpFormatter.java b/Users/SE4Test/Downloads/checkout/Cli_8_buggy/src/java/org/apache/commons/cli/HelpFormatter.java
+index 40873f5..639b9d5 100644
+--- a/Users/SE4Test/Downloads/checkout/Cli_8_fix/src/java/org/apache/commons/cli/HelpFormatter.java
++++ b/Users/SE4Test/Downloads/checkout/Cli_8_buggy/src/java/org/apache/commons/cli/HelpFormatter.java
+@@ -809,7 +809,7 @@ public class HelpFormatter {
+        while (true)
+        {
+            text = padding + text.substring(pos).trim();
+            pos = findWrapPos(text, width, [-0);-]{+nextLineTabStop);+}
+
+            if (pos == -1)
+            {

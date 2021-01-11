@@ -1,0 +1,13 @@
+/Users/SE4Test/Downloads/checkout/Compress_+25+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/compress_25_fix/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java b/Users/SE4Test/Downloads/checkout/compress_25_buggy/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java
+index 9a3aa37..38ae956 100644
+--- a/Users/SE4Test/Downloads/checkout/compress_25_fix/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java
++++ b/Users/SE4Test/Downloads/checkout/compress_25_buggy/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java
+@@ -181,7 +181,6 @@ public class ZipArchiveInputStream extends ArchiveInputStream {
+        this.allowStoredEntriesWithDataDescriptor =
+            allowStoredEntriesWithDataDescriptor;
+        // haven't read anything so far
+[-        buf.limit(0);-]
+    }
+
+    public ZipArchiveEntry getNextZipEntry() throws IOException {

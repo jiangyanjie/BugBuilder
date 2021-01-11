@@ -1,0 +1,16 @@
+/Users/SE4Test/Downloads/checkout/Math+3+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/math_3_fix/src/main/java/org/apache/commons/math3/util/MathArrays.java b/Users/SE4Test/Downloads/checkout/math_3_buggy/src/main/java/org/apache/commons/math3/util/MathArrays.java
+index 8f83d96..325fd94 100644
+--- a/Users/SE4Test/Downloads/checkout/math_3_fix/src/main/java/org/apache/commons/math3/util/MathArrays.java
++++ b/Users/SE4Test/Downloads/checkout/math_3_buggy/src/main/java/org/apache/commons/math3/util/MathArrays.java
+@@ -818,10 +818,7 @@ public class MathArrays {
+            throw new DimensionMismatchException(len, b.length);
+        }
+
+[-        if (len == 1) {-]
+            // Revert to scalar multiplication.
+[-            return a[0] * b[0];-]
+[-        }-]
+
+        final double[] prodHigh = new double[len];
+        double prodLowSum = 0;

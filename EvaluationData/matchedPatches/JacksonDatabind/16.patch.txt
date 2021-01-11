@@ -1,0 +1,12 @@
+/Users/SE4Test/Downloads/checkout/JacksonDatabind+16+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackdata_16_fix/src/main/java/com/fasterxml/jackson/databind/introspect/AnnotationMap.java b/Users/SE4Test/Downloads/checkout/jackdata_16_buggy/src/main/java/com/fasterxml/jackson/databind/introspect/AnnotationMap.java
+index 513a83d..f9cc5cb 100644
+--- a/Users/SE4Test/Downloads/checkout/jackdata_16_fix/src/main/java/com/fasterxml/jackson/databind/introspect/AnnotationMap.java
++++ b/Users/SE4Test/Downloads/checkout/jackdata_16_buggy/src/main/java/com/fasterxml/jackson/databind/introspect/AnnotationMap.java
+@@ -109,7 +109,7 @@ public final class AnnotationMap implements Annotations
+            _annotations = new HashMap<Class<? extends Annotation>,Annotation>();
+        }
+        Annotation previous = _annotations.put(ann.annotationType(), ann);
+        return (previous [-==-]{+!=+} null) [-|| !previous.equals(ann);-]{+&& previous.equals(ann);+}
+    }
+}

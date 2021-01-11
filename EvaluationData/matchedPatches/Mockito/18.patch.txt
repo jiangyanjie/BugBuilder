@@ -1,0 +1,17 @@
+/Users/SE4Test/Downloads/checkout/Mockito+18+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/mockito_18_fix/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java b/Users/SE4Test/Downloads/checkout/mockito_18_buggy/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java
+index 11304af..06697e5 100644
+--- a/Users/SE4Test/Downloads/checkout/mockito_18_fix/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java
++++ b/Users/SE4Test/Downloads/checkout/mockito_18_buggy/src/org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues.java
+@@ -84,8 +84,6 @@ public class ReturnsEmptyValues implements Answer<Object>, Serializable {
+            return Primitives.defaultValueForPrimitiveOrWrapper(type);
+            //new instances are used instead of Collections.emptyList(), etc.
+            //to avoid UnsupportedOperationException if code under test modifies returned collection
+[-        } else if (type == Iterable.class) {-]
+[-            return new ArrayList<Object>(0);-]
+        } else if (type == Collection.class) {
+            return new LinkedList<Object>();
+        } else if (type == Set.class) {
+ 
+ 
+ 

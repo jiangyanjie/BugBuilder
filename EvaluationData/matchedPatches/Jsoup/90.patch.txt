@@ -1,0 +1,15 @@
+/Users/SE4Test/Downloads/checkout/Jsoup+90+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jsoup_90_fix/src/main/java/org/jsoup/helper/HttpConnection.java b/Users/SE4Test/Downloads/checkout/jsoup_90_buggy/src/main/java/org/jsoup/helper/HttpConnection.java
+index 00a1d98..a941e48 100644
+--- a/Users/SE4Test/Downloads/checkout/jsoup_90_fix/src/main/java/org/jsoup/helper/HttpConnection.java
++++ b/Users/SE4Test/Downloads/checkout/jsoup_90_buggy/src/main/java/org/jsoup/helper/HttpConnection.java
+@@ -421,8 +421,6 @@ public class HttpConnection implements Connection {
+                    return false;
+                }
+
+[-                if (end >= input.length)-]
+[-                    return false;-]
+
+                while (i < end) {
+                    i++;
+ 

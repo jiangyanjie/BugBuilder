@@ -1,0 +1,18 @@
+/Users/SE4Test/Downloads/checkout/Compress_+36+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/compress_36_fix/src/main/java/org/apache/commons/compress/archivers/sevenz/SevenZFile.java b/Users/SE4Test/Downloads/checkout/compress_36_buggy/src/main/java/org/apache/commons/compress/archivers/sevenz/SevenZFile.java
+index 1056840..3e2113d 100644
+--- a/Users/SE4Test/Downloads/checkout/compress_36_fix/src/main/java/org/apache/commons/compress/archivers/sevenz/SevenZFile.java
++++ b/Users/SE4Test/Downloads/checkout/compress_36_buggy/src/main/java/org/apache/commons/compress/archivers/sevenz/SevenZFile.java
+@@ -899,9 +899,6 @@ public class SevenZFile implements Closeable {
+    }
+    
+    private InputStream getCurrentStream() throws IOException {
+[-        if (archive.files[currentEntryIndex].getSize() == 0) {-]
+[-            return new ByteArrayInputStream(new byte[0]);-]
+[-        }-]
+        if (deferredBlockStreams.isEmpty()) {
+            throw new IllegalStateException("No current 7z entry (call getNextEntry() first).");
+        }
+ 
+ 
+ 

@@ -1,0 +1,22 @@
+/Users/SE4Test/Downloads/checkout/Math+35+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/math_35_fix/src/main/java/org/apache/commons/math3/genetics/ElitisticListPopulation.java b/Users/SE4Test/Downloads/checkout/math_35_buggy/src/main/java/org/apache/commons/math3/genetics/ElitisticListPopulation.java
+index 829c97d..67b368d 100644
+--- a/Users/SE4Test/Downloads/checkout/math_35_fix/src/main/java/org/apache/commons/math3/genetics/ElitisticListPopulation.java
++++ b/Users/SE4Test/Downloads/checkout/math_35_buggy/src/main/java/org/apache/commons/math3/genetics/ElitisticListPopulation.java
+@@ -48,7 +48,7 @@ public class ElitisticListPopulation extends ListPopulation {
+                                   final int populationLimit,
+                                   final double elitismRate) {
+        super(chromosomes, populationLimit);
+        [-setElitismRate(elitismRate);-]{+this.elitismRate = elitismRate;+}
+    }
+
+    /**
+@@ -62,7 +62,7 @@ public class ElitisticListPopulation extends ListPopulation {
+     */
+    public ElitisticListPopulation(final int populationLimit, final double elitismRate) {
+        super(populationLimit);
+        [-setElitismRate(elitismRate);-]{+this.elitismRate = elitismRate;+}
+    }
+
+    /**
+ 

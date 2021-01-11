@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/Math+5+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/math_5_fix/src/main/java/org/apache/commons/math3/complex/Complex.java b/Users/SE4Test/Downloads/checkout/math_5_buggy/src/main/java/org/apache/commons/math3/complex/Complex.java
+index ac8185b..22b23f2 100644
+--- a/Users/SE4Test/Downloads/checkout/math_5_fix/src/main/java/org/apache/commons/math3/complex/Complex.java
++++ b/Users/SE4Test/Downloads/checkout/math_5_buggy/src/main/java/org/apache/commons/math3/complex/Complex.java
+@@ -302,7 +302,7 @@ public class Complex implements FieldElement<Complex>, Serializable  {
+        }
+
+        if (real == 0.0 && imaginary == 0.0) {
+            return [-INF;-]{+NaN;+}
+        }
+
+        if (isInfinite) {
+ 

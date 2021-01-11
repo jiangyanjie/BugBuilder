@@ -1,0 +1,19 @@
+/Users/SE4Test/Downloads/checkout/Closure+172+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_172_fix/src/com/google/javascript/jscomp/TypedScopeCreator.java b/Users/SE4Test/Downloads/checkout/closure_172_buggy/src/com/google/javascript/jscomp/TypedScopeCreator.java
+index 4acb363..d5a5947 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_172_fix/src/com/google/javascript/jscomp/TypedScopeCreator.java
++++ b/Users/SE4Test/Downloads/checkout/closure_172_buggy/src/com/google/javascript/jscomp/TypedScopeCreator.java
+@@ -1667,13 +1667,7 @@ final class TypedScopeCreator implements ScopeCreator {
+
+      // Prototypes of constructors and interfaces are always declared.
+      if (qName != null && qName.endsWith(".prototype")) {
+[-        String className = qName.substring(0, qName.lastIndexOf(".prototype"));-]
+[-        Var slot = scope.getSlot(className);-]
+[-        JSType classType = slot == null ? null : slot.getType();-]
+[-        if (classType != null-]
+[-            && (classType.isConstructor() || classType.isInterface())) {-]
+          return false;
+[-        }-]
+      }
+
+      boolean inferred = true;

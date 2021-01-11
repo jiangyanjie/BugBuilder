@@ -1,0 +1,16 @@
+/Users/SE4Test/Downloads/checkout/Compress_+30+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/compress_30_fix/src/main/java/org/apache/commons/compress/compressors/bzip2/BZip2CompressorInputStream.java b/Users/SE4Test/Downloads/checkout/compress_30_buggy/src/main/java/org/apache/commons/compress/compressors/bzip2/BZip2CompressorInputStream.java
+index b32b1f9..e0e3b1e 100644
+--- a/Users/SE4Test/Downloads/checkout/compress_30_fix/src/main/java/org/apache/commons/compress/compressors/bzip2/BZip2CompressorInputStream.java
++++ b/Users/SE4Test/Downloads/checkout/compress_30_buggy/src/main/java/org/apache/commons/compress/compressors/bzip2/BZip2CompressorInputStream.java
+@@ -165,9 +165,6 @@ public class BZip2CompressorInputStream extends CompressorInputStream implements
+        if (this.in == null) {
+            throw new IOException("stream closed");
+        }
+[-        if (len == 0) {-]
+[-            return 0;-]
+[-        }-]
+
+        final int hi = offs + len;
+        int destOffs = offs;
+ 

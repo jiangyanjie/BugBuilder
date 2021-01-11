@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/Closure+57+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_57_fix/src/com/google/javascript/jscomp/ClosureCodingConvention.java b/Users/SE4Test/Downloads/checkout/closure_57_buggy/src/com/google/javascript/jscomp/ClosureCodingConvention.java
+index b5a3c1b..c507c92 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_57_fix/src/com/google/javascript/jscomp/ClosureCodingConvention.java
++++ b/Users/SE4Test/Downloads/checkout/closure_57_buggy/src/com/google/javascript/jscomp/ClosureCodingConvention.java
+@@ -194,7 +194,7 @@ public class ClosureCodingConvention extends DefaultCodingConvention {
+        String qualifiedName = callee.getQualifiedName();
+        if (functionName.equals(qualifiedName)) {
+          Node target = callee.getNext();
+          if (target != [-null && target.getType() == Token.STRING)-]{+null)+} {
+            className = target.getString();
+          }
+        }
+ 

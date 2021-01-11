@@ -1,0 +1,20 @@
+ 
+/Users/SE4Test/Downloads/checkout/JacksonCore_+7+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackcore_7_fix/src/main/java/com/fasterxml/jackson/core/json/JsonWriteContext.java b/Users/SE4Test/Downloads/checkout/jackcore_7_buggy/src/main/java/com/fasterxml/jackson/core/json/JsonWriteContext.java
+index a5706c8..4ff12d7 100644
+--- a/Users/SE4Test/Downloads/checkout/jackcore_7_fix/src/main/java/com/fasterxml/jackson/core/json/JsonWriteContext.java
++++ b/Users/SE4Test/Downloads/checkout/jackcore_7_buggy/src/main/java/com/fasterxml/jackson/core/json/JsonWriteContext.java
+@@ -166,9 +166,6 @@ public class JsonWriteContext extends JsonStreamContext
+    public int writeValue() {
+        // Most likely, object:
+        if (_type == TYPE_OBJECT) {
+[-            if (!_gotName) {-]
+[-                return STATUS_EXPECT_NAME;-]
+[-            }-]
+            _gotName = false;
+            ++_index;
+            return STATUS_OK_AFTER_COLON;
+ 
+ 
+ 
+ 

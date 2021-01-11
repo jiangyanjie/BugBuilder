@@ -1,0 +1,18 @@
+/Users/SE4Test/Downloads/checkout/Lang+39+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/lang_39_fix/src/java/org/apache/commons/lang3/StringUtils.java b/Users/SE4Test/Downloads/checkout/lang_39_buggy/src/java/org/apache/commons/lang3/StringUtils.java
+index f6cabee..14563aa 100644
+--- a/Users/SE4Test/Downloads/checkout/lang_39_fix/src/java/org/apache/commons/lang3/StringUtils.java
++++ b/Users/SE4Test/Downloads/checkout/lang_39_buggy/src/java/org/apache/commons/lang3/StringUtils.java
+@@ -3673,9 +3673,6 @@ public class StringUtils {
+
+        // count the replacement text elements that are larger than their corresponding text being replaced
+        for (int i = 0; i < searchList.length; i++) {
+[-            if (searchList[i] == null || replacementList[i] == null) {-]
+[-                continue;-]
+[-            }-]
+            int greater = replacementList[i].length() - searchList[i].length();
+            if (greater > 0) {
+                increase += 3 * greater; // assume 3 matches
+ 
+ 
+ 

@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/Closure+1+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_1_fix/src/com/google/javascript/jscomp/RemoveUnusedVars.java b/Users/SE4Test/Downloads/checkout/closure_1_buggy/src/com/google/javascript/jscomp/RemoveUnusedVars.java
+index 4c84735..dfad51b 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_1_fix/src/com/google/javascript/jscomp/RemoveUnusedVars.java
++++ b/Users/SE4Test/Downloads/checkout/closure_1_buggy/src/com/google/javascript/jscomp/RemoveUnusedVars.java
+@@ -376,9 +376,6 @@ class RemoveUnusedVars
+    // is removing globals, then it's OK to remove unused function args.
+    //
+    // See http://code.google.com/p/closure-compiler/issues/detail?id=253
+[-    if (!removeGlobals) {-]
+[-      return;-]
+[-    }-]
+
+    Node function = fnScope.getRootNode();

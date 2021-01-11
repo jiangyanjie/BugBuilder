@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/Time+19+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/time_19_fix/src/main/java/org/joda/time/DateTimeZone.java b/Users/SE4Test/Downloads/checkout/time_19_buggy/src/main/java/org/joda/time/DateTimeZone.java
+index ec05941..855cad0 100644
+--- a/Users/SE4Test/Downloads/checkout/time_19_fix/src/main/java/org/joda/time/DateTimeZone.java
++++ b/Users/SE4Test/Downloads/checkout/time_19_buggy/src/main/java/org/joda/time/DateTimeZone.java
+@@ -897,7 +897,7 @@ public abstract class DateTimeZone implements Serializable {
+                    return offsetLocal;
+                }
+            }
+        } else if (offsetLocal [->=-]{+>+} 0) {
+            long prev = previousTransition(instantAdjusted);
+            if (prev < instantAdjusted) {
+                int offsetPrev = getOffset(prev);
+ 

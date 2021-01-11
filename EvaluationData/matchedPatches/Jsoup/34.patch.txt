@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/Jsoup+34+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jsoup_34_fix/src/main/java/org/jsoup/parser/CharacterReader.java b/Users/SE4Test/Downloads/checkout/jsoup_34_buggy/src/main/java/org/jsoup/parser/CharacterReader.java
+index f8e0eb0..dc1b114 100644
+--- a/Users/SE4Test/Downloads/checkout/jsoup_34_fix/src/main/java/org/jsoup/parser/CharacterReader.java
++++ b/Users/SE4Test/Downloads/checkout/jsoup_34_buggy/src/main/java/org/jsoup/parser/CharacterReader.java
+@@ -88,7 +88,7 @@ class CharacterReader {
+                while(++offset < length && startChar != input[offset]);
+            int i = offset + 1;
+            int last = i + seq.length()-1;
+            if (offset <[-length && last <=-] length) {
+                for (int j = 1; i < last && seq.charAt(j) == input[i]; i++, j++);
+                if (i == last) // found full sequence
+                    return offset - pos;
+ 

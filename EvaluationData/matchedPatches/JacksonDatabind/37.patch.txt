@@ -1,0 +1,13 @@
+/Users/SE4Test/Downloads/checkout/JacksonDatabind+37+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackdata_37_fix/src/main/java/com/fasterxml/jackson/databind/type/SimpleType.java b/Users/SE4Test/Downloads/checkout/jackdata_37_buggy/src/main/java/com/fasterxml/jackson/databind/type/SimpleType.java
+index 1c741ec..eca7e8e 100644
+--- a/Users/SE4Test/Downloads/checkout/jackdata_37_fix/src/main/java/com/fasterxml/jackson/databind/type/SimpleType.java
++++ b/Users/SE4Test/Downloads/checkout/jackdata_37_buggy/src/main/java/com/fasterxml/jackson/databind/type/SimpleType.java
+@@ -132,7 +132,7 @@ public class SimpleType // note: until 2.6 was final
+        }
+        */
+        // 15-Jan-2015, tatu: Not correct; should really re-resolve...
+        return new SimpleType(subclass, _bindings, [-this,-]{+_superClass,+} _superInterfaces,
+                _valueHandler, _typeHandler, _asStatic);
+    }
+    

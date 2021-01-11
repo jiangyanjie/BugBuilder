@@ -1,0 +1,37 @@
+/Users/SE4Test/Downloads/checkout/Jsoup+66+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jsoup_66_fix/src/main/java/org/jsoup/nodes/Element.java b/Users/SE4Test/Downloads/checkout/jsoup_66_buggy/src/main/java/org/jsoup/nodes/Element.java
+index 85d335a..461a922 100644
+--- a/Users/SE4Test/Downloads/checkout/jsoup_66_fix/src/main/java/org/jsoup/nodes/Element.java
++++ b/Users/SE4Test/Downloads/checkout/jsoup_66_buggy/src/main/java/org/jsoup/nodes/Element.java
+@@ -86,7 +86,7 @@ public class Element extends Node {
+
+    protected List<Node> ensureChildNodes() {
+        if (childNodes == EMPTY_NODES) {
+            childNodes = new [-NodeList(this, 4);-]{+NodeList(4);+}
+        }
+        return childNodes;
+    }
+@@ -1399,22 +1399,19 @@ public class Element extends Node {
+        Element clone = (Element) super.doClone(parent);
+        clone.attributes = attributes != null ? attributes.clone() : null;
+        clone.baseUri = baseUri;
+        clone.childNodes = new [-NodeList(clone, childNodes.size());-]{+NodeList(childNodes.size());+}
+        clone.childNodes.addAll(childNodes);
+
+        return clone;
+    }
+
+    private[-static-] final class NodeList extends ChangeNotifyingArrayList<Node> {
+        [-private final Element owner;-]
+
+[-        NodeList(Element owner, int-]{+NodeList(int+} initialCapacity) {
+            super(initialCapacity);
+[-            this.owner = owner;-]
+        }
+
+        public void onContentsChanged() {
+            [-owner.nodelistChanged();-]{+nodelistChanged();+}
+        }
+    }
+}
+ 

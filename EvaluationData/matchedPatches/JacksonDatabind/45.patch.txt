@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/JacksonDatabind+45+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackdata_45_fix/src/main/java/com/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase.java b/Users/SE4Test/Downloads/checkout/jackdata_45_buggy/src/main/java/com/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase.java
+index 68dbf40..eec386e 100644
+--- a/Users/SE4Test/Downloads/checkout/jackdata_45_fix/src/main/java/com/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase.java
++++ b/Users/SE4Test/Downloads/checkout/jackdata_45_buggy/src/main/java/com/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase.java
+@@ -60,8 +60,7 @@ public abstract class DateTimeSerializerBase<T>
+                    return withFormat(Boolean.TRUE, null);
+                }
+
+                if [-((shape-]{+(format.getShape()+} == JsonFormat.Shape.STRING)[-|| format.hasPattern()-]
+[-                                || format.hasLocale() || format.hasTimeZone())-] {
+                    TimeZone tz = format.getTimeZone();
+                    final String pattern = format.hasPattern()
+                                    ? format.getPattern()

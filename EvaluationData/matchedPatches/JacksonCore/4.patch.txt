@@ -1,0 +1,17 @@
+/Users/SE4Test/Downloads/checkout/JacksonCore_+4+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackcore_4_fix/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java b/Users/SE4Test/Downloads/checkout/jackcore_4_buggy/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java
+index a677376..f97a083 100644
+--- a/Users/SE4Test/Downloads/checkout/jackcore_4_fix/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java
++++ b/Users/SE4Test/Downloads/checkout/jackcore_4_buggy/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java
+@@ -582,11 +582,8 @@ public final class TextBuffer
+        final char[] curr = _currentSegment;
+        // Let's grow by 50% by default
+        final int len = curr.length;
+[-        int newLen = len + (len >> 1);-]
+        // but above intended maximum, slow to increase by 25%
+        [-if (newLen > MAX_SEGMENT_LEN) {-]{+int+} newLen = {+(len == MAX_SEGMENT_LEN) ? (MAX_SEGMENT_LEN+1) : Math.min(MAX_SEGMENT_LEN,+} len + (len >> [-2);-]
+[-        }-]{+1));+}
+        return (_currentSegment = Arrays.copyOf(curr, newLen));
+    }
+
+ 

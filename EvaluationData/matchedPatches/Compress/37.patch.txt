@@ -1,0 +1,19 @@
+/Users/SE4Test/Downloads/checkout/Compress_+37+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/compress_37_fix/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java b/Users/SE4Test/Downloads/checkout/compress_37_buggy/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java
+index f0d60cb..7a409d6 100644
+--- a/Users/SE4Test/Downloads/checkout/compress_37_fix/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java
++++ b/Users/SE4Test/Downloads/checkout/compress_37_buggy/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java
+@@ -459,9 +459,7 @@ public class TarArchiveInputStream extends ArchiveInputStream {
+            int read = 0;
+            while((ch = i.read()) != -1) {
+                read++;
+                if (ch ==[-'\n') { // blank line in header-]
+[-                    break;-]
+[-                } else if (ch ==-] ' '){[-// End of length string-]
+                    // Get keyword
+                    final ByteArrayOutputStream coll = new ByteArrayOutputStream();
+                    while((ch = i.read()) != -1) {
+ 
+ 
+ 
+ 

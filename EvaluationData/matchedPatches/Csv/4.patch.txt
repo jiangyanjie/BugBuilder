@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/Csv_+4+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/csv_4_fix/src/main/java/org/apache/commons/csv/CSVParser.java b/Users/SE4Test/Downloads/checkout/csv_4_buggy/src/main/java/org/apache/commons/csv/CSVParser.java
+index e97a364..9d56f1a 100644
+--- a/Users/SE4Test/Downloads/checkout/csv_4_fix/src/main/java/org/apache/commons/csv/CSVParser.java
++++ b/Users/SE4Test/Downloads/checkout/csv_4_buggy/src/main/java/org/apache/commons/csv/CSVParser.java
+@@ -285,7 +285,7 @@ public final class CSVParser implements Iterable<CSVRecord>, Closeable {
+     * @return a copy of the header map that iterates in column order.
+     */
+    public Map<String, Integer> getHeaderMap() {
+        return[-this.headerMap == null ? null :-] new LinkedHashMap<String, Integer>(this.headerMap);
+    }
+
+    /**
+ 

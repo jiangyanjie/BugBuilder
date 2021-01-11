@@ -1,0 +1,17 @@
+/Users/SE4Test/Downloads/checkout/JacksonDatabind+82+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackdata_82_fix/src/main/java/com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java b/Users/SE4Test/Downloads/checkout/jackdata_82_buggy/src/main/java/com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java
+index 1423f28..4b0434e 100644
+--- a/Users/SE4Test/Downloads/checkout/jackdata_82_fix/src/main/java/com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java
++++ b/Users/SE4Test/Downloads/checkout/jackdata_82_buggy/src/main/java/com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java
+@@ -492,7 +492,7 @@ public class BeanDeserializerFactory
+            boolean ignoreAny = ignorals.getIgnoreUnknown();
+            builder.setIgnoreUnknownProperties(ignoreAny);
+            // Or explicit/implicit definitions?
+            ignored = [-ignorals.findIgnoredForDeserialization();-]{+ignorals.getIgnored();+}
+            for (String propName : ignored) {
+                builder.addIgnorable(propName);
+            }
+ 
+ 
+ 
+ 

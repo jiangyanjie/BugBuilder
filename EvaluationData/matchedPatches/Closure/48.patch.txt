@@ -1,0 +1,20 @@
+/Users/SE4Test/Downloads/checkout/Closure+48+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_48_fix/src/com/google/javascript/jscomp/TypedScopeCreator.java b/Users/SE4Test/Downloads/checkout/closure_48_buggy/src/com/google/javascript/jscomp/TypedScopeCreator.java
+index 09aba12..3fb4813 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_48_fix/src/com/google/javascript/jscomp/TypedScopeCreator.java
++++ b/Users/SE4Test/Downloads/checkout/closure_48_buggy/src/com/google/javascript/jscomp/TypedScopeCreator.java
+@@ -1518,14 +1518,11 @@ final class TypedScopeCreator implements ScopeCreator {
+            || FunctionTypeBuilder.isFunctionTypeDeclaration(info));
+      }
+
+      if [-(inferred && rhsValue != null && rhsValue.isFunction())-]{+(inferred)+} {
+        // Determining declaration for #2
+[-if (info != null) {-]        inferred = [-false;-]
+[-        } else if (!scope.isDeclared(qName, false)-]{+!(rhsValue != null+} &&
+            [-n.isUnscopedQualifiedName()) {-]
+[-          inferred = false;-]
+[-        }-]{+rhsValue.isFunction() &&+}
+{+            (info != null || !scope.isDeclared(qName, false)));+}
+      }
+
+      if (!inferred) {

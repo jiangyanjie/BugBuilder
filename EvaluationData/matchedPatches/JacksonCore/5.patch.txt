@@ -1,0 +1,15 @@
+/Users/SE4Test/Downloads/checkout/JacksonCore_+5+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackcore_5_fix/src/main/java/com/fasterxml/jackson/core/JsonPointer.java b/Users/SE4Test/Downloads/checkout/jackcore_5_buggy/src/main/java/com/fasterxml/jackson/core/JsonPointer.java
+index a802239..d353b39 100644
+--- a/Users/SE4Test/Downloads/checkout/jackcore_5_fix/src/main/java/com/fasterxml/jackson/core/JsonPointer.java
++++ b/Users/SE4Test/Downloads/checkout/jackcore_5_buggy/src/main/java/com/fasterxml/jackson/core/JsonPointer.java
+@@ -190,7 +190,7 @@ public class JsonPointer
+            return -1;
+        }
+        for (int i = 0; i < len; ++i) {
+            char c = [-str.charAt(i);-]{+str.charAt(i++);+}
+            if (c > '9' || c < '0') {
+                return -1;
+            }
+ 
+ 

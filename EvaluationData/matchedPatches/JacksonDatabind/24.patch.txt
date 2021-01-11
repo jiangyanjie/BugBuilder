@@ -1,0 +1,16 @@
+/Users/SE4Test/Downloads/checkout/JacksonDatabind+24+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackdata_24_fix/src/main/java/com/fasterxml/jackson/databind/cfg/BaseSettings.java b/Users/SE4Test/Downloads/checkout/jackdata_24_buggy/src/main/java/com/fasterxml/jackson/databind/cfg/BaseSettings.java
+index 7291b5d..cd2da61 100644
+--- a/Users/SE4Test/Downloads/checkout/jackdata_24_fix/src/main/java/com/fasterxml/jackson/databind/cfg/BaseSettings.java
++++ b/Users/SE4Test/Downloads/checkout/jackdata_24_buggy/src/main/java/com/fasterxml/jackson/databind/cfg/BaseSettings.java
+@@ -231,9 +231,10 @@ public final class BaseSettings
+        if (_dateFormat == df) {
+            return this;
+        }
+        {+TimeZone tz = (df == null) ? _timeZone : df.getTimeZone();+}
+        return new BaseSettings(_classIntrospector, _annotationIntrospector, _visibilityChecker, _propertyNamingStrategy, _typeFactory,
+                _typeResolverBuilder, df, _handlerInstantiator, _locale,
+                [-_timeZone,-]{+tz,+} _defaultBase64);
+    }
+
+    public BaseSettings withHandlerInstantiator(HandlerInstantiator hi) {

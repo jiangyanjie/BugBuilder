@@ -1,0 +1,13 @@
+/Users/SE4Test/Downloads/checkout/Jsoup+43+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jsoup_43_fix/src/main/java/org/jsoup/nodes/Element.java b/Users/SE4Test/Downloads/checkout/jsoup_43_buggy/src/main/java/org/jsoup/nodes/Element.java
+index 1575fd0..f1ae8dd 100644
+--- a/Users/SE4Test/Downloads/checkout/jsoup_43_fix/src/main/java/org/jsoup/nodes/Element.java
++++ b/Users/SE4Test/Downloads/checkout/jsoup_43_buggy/src/main/java/org/jsoup/nodes/Element.java
+@@ -571,7 +571,7 @@ public class Element extends Node {
+
+        for (int i = 0; i < elements.size(); i++) {
+            E element = elements.get(i);
+            if [-(element == search)-]{+(element.equals(search))+}
+                return i;
+        }
+        return null;

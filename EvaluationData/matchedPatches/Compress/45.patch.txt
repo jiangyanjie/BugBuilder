@@ -1,0 +1,19 @@
+/Users/SE4Test/Downloads/checkout/Compress_+45+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/compress_45_fix/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java b/Users/SE4Test/Downloads/checkout/compress_45_buggy/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java
+index d132d9d..39ce5c1 100644
+--- a/Users/SE4Test/Downloads/checkout/compress_45_fix/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java
++++ b/Users/SE4Test/Downloads/checkout/compress_45_buggy/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java
+@@ -484,9 +484,8 @@ public class TarUtils {
+
+        if (length < 9) {
+            formatLongBinary(value, buf, offset, length, negative);
+[-        } else {-]
+[-            formatBigIntegerBinary(value, buf, offset, length, negative);-]
+        }
+        {+formatBigIntegerBinary(value, buf, offset, length, negative);+}
+
+        buf[offset] = (byte) (negative ? 0xff : 0x80);
+        return offset + length;
+ 
+ 
+ 

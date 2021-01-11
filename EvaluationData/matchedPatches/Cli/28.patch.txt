@@ -1,0 +1,13 @@
+/Users/SE4Test/Downloads/checkout/Cli+28+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/Cli_28_fix/src/java/org/apache/commons/cli/Parser.java b/Users/SE4Test/Downloads/checkout/Cli_28_buggy/src/java/org/apache/commons/cli/Parser.java
+index c106932..6b39536 100644
+--- a/Users/SE4Test/Downloads/checkout/Cli_28_fix/src/java/org/apache/commons/cli/Parser.java
++++ b/Users/SE4Test/Downloads/checkout/Cli_28_buggy/src/java/org/apache/commons/cli/Parser.java
+@@ -287,7 +287,7 @@ public abstract class Parser implements CommandLineParser
+                {
+                    // if the value is not yes, true or 1 then don't add the
+                    // option to the CommandLine
+                    [-continue;-]{+break;+}
+                }
+
+                cmd.addOption(opt);

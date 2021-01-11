@@ -1,0 +1,13 @@
+/Users/SE4Test/Downloads/checkout/Mockito+8+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/mockito_8_fix/src/org/mockito/internal/util/reflection/GenericMetadataSupport.java b/Users/SE4Test/Downloads/checkout/mockito_8_buggy/src/org/mockito/internal/util/reflection/GenericMetadataSupport.java
+index 8046052..152e942 100644
+--- a/Users/SE4Test/Downloads/checkout/mockito_8_fix/src/org/mockito/internal/util/reflection/GenericMetadataSupport.java
++++ b/Users/SE4Test/Downloads/checkout/mockito_8_buggy/src/org/mockito/internal/util/reflection/GenericMetadataSupport.java
+@@ -76,7 +76,7 @@ public abstract class GenericMetadataSupport {
+
+            if (actualTypeArgument instanceof WildcardType) {
+                contextualActualTypeParameters.put(typeParameter, boundsOf((WildcardType) actualTypeArgument));
+            } else[-if (typeParameter != actualTypeArgument)-] {
+                contextualActualTypeParameters.put(typeParameter, actualTypeArgument);
+            }
+            // logger.log("For '" + parameterizedType + "' found type variable : { '" + typeParameter + "(" + System.identityHashCode(typeParameter) + ")" + "' : '" + actualTypeArgument + "(" + System.identityHashCode(typeParameter) + ")" + "' }");

@@ -1,0 +1,12 @@
+/Users/SE4Test/Downloads/checkout/JacksonDatabind+97+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackdata_97_fix/src/main/java/com/fasterxml/jackson/databind/node/POJONode.java b/Users/SE4Test/Downloads/checkout/jackdata_97_buggy/src/main/java/com/fasterxml/jackson/databind/node/POJONode.java
+index 06c315c..91fe512 100644
+--- a/Users/SE4Test/Downloads/checkout/jackdata_97_fix/src/main/java/com/fasterxml/jackson/databind/node/POJONode.java
++++ b/Users/SE4Test/Downloads/checkout/jackdata_97_buggy/src/main/java/com/fasterxml/jackson/databind/node/POJONode.java
+@@ -111,7 +111,7 @@ public class POJONode
+        } else {
+            // 25-May-2018, tatu: [databind#1991] do not call via generator but through context;
+            //    this to preserve contextual information
+            [-ctxt.defaultSerializeValue(_value, gen);-]{+gen.writeObject(_value);+}
+        }
+    }

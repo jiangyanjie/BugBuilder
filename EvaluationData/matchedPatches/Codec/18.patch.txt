@@ -1,0 +1,14 @@
+ 
+/Users/SE4Test/Downloads/checkout/Codec_+18+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/codec_18_fix/src/main/java/org/apache/commons/codec/binary/StringUtils.java b/Users/SE4Test/Downloads/checkout/codec_18_buggy/src/main/java/org/apache/commons/codec/binary/StringUtils.java
+index e5fb718..bef55f7 100644
+--- a/Users/SE4Test/Downloads/checkout/codec_18_fix/src/main/java/org/apache/commons/codec/binary/StringUtils.java
++++ b/Users/SE4Test/Downloads/checkout/codec_18_buggy/src/main/java/org/apache/commons/codec/binary/StringUtils.java
+@@ -78,7 +78,7 @@ public class StringUtils {
+        if (cs1 instanceof String && cs2 instanceof String) {
+            return cs1.equals(cs2);
+        }
+        return[-cs1.length() == cs2.length() &&-] CharSequenceUtils.regionMatches(cs1, false, 0, cs2, 0, [-cs1.length());-]{+Math.max(cs1.length(), cs2.length()));+}
+    }
+
+    /**

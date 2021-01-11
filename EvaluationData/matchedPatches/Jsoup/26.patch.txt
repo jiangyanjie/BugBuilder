@@ -1,0 +1,13 @@
+/Users/SE4Test/Downloads/checkout/Jsoup+26+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jsoup_26_fix/src/main/java/org/jsoup/safety/Cleaner.java b/Users/SE4Test/Downloads/checkout/jsoup_26_buggy/src/main/java/org/jsoup/safety/Cleaner.java
+index 8110836..7d7f316 100644
+--- a/Users/SE4Test/Downloads/checkout/jsoup_26_fix/src/main/java/org/jsoup/safety/Cleaner.java
++++ b/Users/SE4Test/Downloads/checkout/jsoup_26_buggy/src/main/java/org/jsoup/safety/Cleaner.java
+@@ -40,7 +40,6 @@ public class Cleaner {
+        Validate.notNull(dirtyDocument);
+
+        Document clean = Document.createShell(dirtyDocument.baseUri());
+[-        if (dirtyDocument.body() != null) // frameset documents won't have a body. the clean doc will have empty body.-]
+            copySafeNodes(dirtyDocument.body(), clean.body());
+
+        return clean;

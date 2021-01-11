@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/Lang+24+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/lang_24_fix/src/main/java/org/apache/commons/lang3/math/NumberUtils.java b/Users/SE4Test/Downloads/checkout/lang_24_buggy/src/main/java/org/apache/commons/lang3/math/NumberUtils.java
+index d9b3c6d..4a1d845 100644
+--- a/Users/SE4Test/Downloads/checkout/lang_24_fix/src/main/java/org/apache/commons/lang3/math/NumberUtils.java
++++ b/Users/SE4Test/Downloads/checkout/lang_24_buggy/src/main/java/org/apache/commons/lang3/math/NumberUtils.java
+@@ -1410,7 +1410,7 @@ public class NumberUtils {
+            if (chars[i] == 'l'
+                || chars[i] == 'L') {
+                // not allowing L with an exponent or decimal point
+                return foundDigit && [-!hasExp && !hasDecPoint;-]{+!hasExp;+}
+            }
+            // last character is illegal
+            return false;
+ 

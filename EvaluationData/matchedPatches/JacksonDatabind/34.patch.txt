@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/JacksonDatabind+34+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackdata_34_fix/src/main/java/com/fasterxml/jackson/databind/ser/std/NumberSerializer.java b/Users/SE4Test/Downloads/checkout/jackdata_34_buggy/src/main/java/com/fasterxml/jackson/databind/ser/std/NumberSerializer.java
+index 13118a0..5624624 100644
+--- a/Users/SE4Test/Downloads/checkout/jackdata_34_fix/src/main/java/com/fasterxml/jackson/databind/ser/std/NumberSerializer.java
++++ b/Users/SE4Test/Downloads/checkout/jackdata_34_buggy/src/main/java/com/fasterxml/jackson/databind/ser/std/NumberSerializer.java
+@@ -78,7 +78,7 @@ public class NumberSerializer
+        } else {
+            Class<?> h = handledType();
+            if (h == BigDecimal.class) {
+                visitFloatFormat(visitor, typeHint, [-JsonParser.NumberType.BIG_DECIMAL);-]{+JsonParser.NumberType.BIG_INTEGER);+}
+            } else {
+                // otherwise bit unclear what to call... but let's try:
+                /*JsonNumberFormatVisitor v2 =*/ visitor.expectNumberFormat(typeHint);
+ 

@@ -1,0 +1,18 @@
+/Users/SE4Test/Downloads/checkout/Jsoup+47+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jsoup_47_fix/src/main/java/org/jsoup/nodes/Entities.java b/Users/SE4Test/Downloads/checkout/jsoup_47_buggy/src/main/java/org/jsoup/nodes/Entities.java
+index aa1f946..08cf311 100644
+--- a/Users/SE4Test/Downloads/checkout/jsoup_47_fix/src/main/java/org/jsoup/nodes/Entities.java
++++ b/Users/SE4Test/Downloads/checkout/jsoup_47_buggy/src/main/java/org/jsoup/nodes/Entities.java
+@@ -119,7 +119,7 @@ public class Entities {
+                        break;
+                    case '<':
+                        // escape when in character data or when in a xml attribue val; not needed in html attr val
+                        if [-(!inAttribute || escapeMode == EscapeMode.xhtml)-]{+(!inAttribute)+}
+                            accum.append("&lt;");
+                        else
+                            accum.append(c);
+ 
+ 
+ 
+ 
+ 

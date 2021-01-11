@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/Jsoup+2+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jsoup_2_fix/src/main/java/org/jsoup/parser/Parser.java b/Users/SE4Test/Downloads/checkout/jsoup_2_buggy/src/main/java/org/jsoup/parser/Parser.java
+index e7284d5..da4bdce 100644
+--- a/Users/SE4Test/Downloads/checkout/jsoup_2_fix/src/main/java/org/jsoup/parser/Parser.java
++++ b/Users/SE4Test/Downloads/checkout/jsoup_2_buggy/src/main/java/org/jsoup/parser/Parser.java
+@@ -145,7 +145,6 @@ public class Parser {
+        if (tag.isData()) {
+            String data = tq.chompTo("</" + tagName);
+            tq.chompTo(">");
+[-            popStackToClose(tag);-]
+            
+            Node dataNode;
+            if (tag.equals(titleTag) || tag.equals(textareaTag)) // want to show as text, but not contain inside tags (so not a data tag?)
+ 

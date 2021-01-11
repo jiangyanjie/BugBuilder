@@ -1,0 +1,16 @@
+/Users/SE4Test/Downloads/checkout/JacksonDatabind+42+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackdata_42_fix/src/main/java/com/fasterxml/jackson/databind/deser/std/FromStringDeserializer.java b/Users/SE4Test/Downloads/checkout/jackdata_42_buggy/src/main/java/com/fasterxml/jackson/databind/deser/std/FromStringDeserializer.java
+index b2ccd1a..cdbd5e8 100644
+--- a/Users/SE4Test/Downloads/checkout/jackdata_42_fix/src/main/java/com/fasterxml/jackson/databind/deser/std/FromStringDeserializer.java
++++ b/Users/SE4Test/Downloads/checkout/jackdata_42_buggy/src/main/java/com/fasterxml/jackson/databind/deser/std/FromStringDeserializer.java
+@@ -281,9 +281,6 @@ public abstract class FromStringDeserializer<T> extends StdScalarDeserializer<T>
+                return URI.create("");
+            }
+            // As per [databind#1123], Locale too
+[-            if (_kind == STD_LOCALE) {-]
+[-                return Locale.ROOT;-]
+[-            }-]
+            return super._deserializeFromEmptyString();
+        }
+    }
+ 

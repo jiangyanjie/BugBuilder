@@ -1,0 +1,20 @@
+/Users/SE4Test/Downloads/checkout/Compress_+44+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/compress_44_fix/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java b/Users/SE4Test/Downloads/checkout/compress_44_buggy/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java
+index 4a408a5..10c7d68 100644
+--- a/Users/SE4Test/Downloads/checkout/compress_44_fix/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java
++++ b/Users/SE4Test/Downloads/checkout/compress_44_buggy/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java
+@@ -32,13 +32,7 @@ public class ChecksumCalculatingInputStream extends InputStream {
+
+    public ChecksumCalculatingInputStream(final Checksum checksum, final InputStream in) {
+
+[-        if ( checksum == null ){-]
+[-            throw new NullPointerException("Parameter checksum must not be null");-]
+[-        }-]
+
+[-        if ( in == null ){-]
+[-            throw new NullPointerException("Parameter in must not be null");-]
+[-        }-]
+
+        this.checksum = checksum;
+        this.in = in;
+ 

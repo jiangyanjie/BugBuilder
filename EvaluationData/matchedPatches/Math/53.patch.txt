@@ -1,0 +1,16 @@
+/Users/SE4Test/Downloads/checkout/Math+53+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/math_53_fix/src/main/java/org/apache/commons/math/complex/Complex.java b/Users/SE4Test/Downloads/checkout/math_53_buggy/src/main/java/org/apache/commons/math/complex/Complex.java
+index ab58c78..e0a8e97 100644
+--- a/Users/SE4Test/Downloads/checkout/math_53_fix/src/main/java/org/apache/commons/math/complex/Complex.java
++++ b/Users/SE4Test/Downloads/checkout/math_53_buggy/src/main/java/org/apache/commons/math/complex/Complex.java
+@@ -150,9 +150,6 @@ public class Complex implements FieldElement<Complex>, Serializable  {
+    public Complex add(Complex rhs)
+        throws NullArgumentException {
+        MathUtils.checkNotNull(rhs);
+[-        if (isNaN || rhs.isNaN) {-]
+[-            return NaN;-]
+[-        }-]
+        return createComplex(real + rhs.getReal(),
+            imaginary + rhs.getImaginary());
+    }
+ 

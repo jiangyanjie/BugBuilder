@@ -1,0 +1,13 @@
+/Users/SE4Test/Downloads/checkout/Closure+31+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_31_fix/src/com/google/javascript/jscomp/Compiler.java b/Users/SE4Test/Downloads/checkout/closure_31_buggy/src/com/google/javascript/jscomp/Compiler.java
+index d98be4a..b76bbb5 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_31_fix/src/com/google/javascript/jscomp/Compiler.java
++++ b/Users/SE4Test/Downloads/checkout/closure_31_buggy/src/com/google/javascript/jscomp/Compiler.java
+@@ -1282,6 +1282,7 @@ public class Compiler extends AbstractCompiler {
+
+      // Check if the sources need to be re-ordered.
+      if (options.dependencyOptions.needsManagement() &&
+          {+!options.skipAllPasses &&+}
+          options.closurePass) {
+        for (CompilerInput input : inputs) {
+          // Forward-declare all the provided types, so that they

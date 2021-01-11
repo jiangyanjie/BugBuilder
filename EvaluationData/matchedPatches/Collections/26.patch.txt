@@ -1,0 +1,15 @@
+/Users/SE4Test/Downloads/checkout/Collections_+26+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/collections_26_fix/src/main/java/org/apache/commons/collections4/keyvalue/MultiKey.java b/Users/SE4Test/Downloads/checkout/collections_26_buggy/src/main/java/org/apache/commons/collections4/keyvalue/MultiKey.java
+index 2b08d8a..794677c 100644
+--- a/Users/SE4Test/Downloads/checkout/collections_26_fix/src/main/java/org/apache/commons/collections4/keyvalue/MultiKey.java
++++ b/Users/SE4Test/Downloads/checkout/collections_26_buggy/src/main/java/org/apache/commons/collections4/keyvalue/MultiKey.java
+@@ -274,7 +274,7 @@ public class MultiKey<K> implements Serializable {
+     * only stable for the same process).
+     * @return the instance with recalculated hash code
+     */
+    [-protected-]{+private+} Object readResolve() {
+        calculateHashCode(keys);
+        return this;
+    }
+ 
+ 

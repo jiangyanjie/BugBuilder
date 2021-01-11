@@ -1,0 +1,34 @@
+/Users/SE4Test/Downloads/checkout/Closure+45+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_45_fix/src/com/google/javascript/jscomp/RemoveUnusedVars.java b/Users/SE4Test/Downloads/checkout/closure_45_buggy/src/com/google/javascript/jscomp/RemoveUnusedVars.java
+index c93a073..be72a58 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_45_fix/src/com/google/javascript/jscomp/RemoveUnusedVars.java
++++ b/Users/SE4Test/Downloads/checkout/closure_45_buggy/src/com/google/javascript/jscomp/RemoveUnusedVars.java
+@@ -729,7 +729,6 @@ class RemoveUnusedVars
+            assignedToUnknownValue = true;
+          }
+
+[-          boolean maybeEscaped = false;-]
+          for (Assign assign : assignsByVar.get(var)) {
+            if (assign.isPropertyAssign) {
+              hasPropertyAssign = true;
+@@ -737,12 +736,9 @@ class RemoveUnusedVars
+                assign.assignNode.getLastChild(), true)) {
+              assignedToUnknownValue = true;
+            }
+[-            if (assign.maybeAliased) {-]
+[-              maybeEscaped = true;-]
+[-            }-]
+          }
+
+          if [-((assignedToUnknownValue || maybeEscaped)-]{+(assignedToUnknownValue+} && hasPropertyAssign) {
+            changes = markReferencedVar(var) || changes;
+            maybeUnreferenced.remove(current);
+            current--;
+@@ -905,7 +901,7 @@ class RemoveUnusedVars
+      this.nameNode = nameNode;
+      this.isPropertyAssign = isPropertyAssign;
+
+      this.maybeAliased = [-NodeUtil.isExpressionResultUsed(assignNode);-]{+!assignNode.getParent().isExprResult();+}
+      this.mayHaveSecondarySideEffects =
+          maybeAliased ||
+          NodeUtil.mayHaveSideEffects(assignNode.getFirstChild()) ||

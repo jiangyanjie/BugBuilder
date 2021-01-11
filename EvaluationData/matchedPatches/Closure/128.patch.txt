@@ -1,0 +1,26 @@
+/Users/SE4Test/Downloads/checkout/Closure+128+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_128_fix/src/com/google/javascript/jscomp/CodeGenerator.java b/Users/SE4Test/Downloads/checkout/closure_128_buggy/src/com/google/javascript/jscomp/CodeGenerator.java
+index 1dc33b7..2270c17 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_128_fix/src/com/google/javascript/jscomp/CodeGenerator.java
++++ b/Users/SE4Test/Downloads/checkout/closure_128_buggy/src/com/google/javascript/jscomp/CodeGenerator.java
+@@ -782,16 +782,13 @@ class CodeGenerator {
+
+  static boolean isSimpleNumber(String s) {
+    int len = s.length();
+[-    if (len == 0) {-]
+[-      return false;-]
+[-    }-]
+    for (int index = 0; index < len; index++) {
+      char c = s.charAt(index);
+      if (c < '0' || c > '9') {
+        return false;
+      }
+    }
+    return len [-== 1 ||-]{+> 0 &&+} s.charAt(0) != '0';
+  }
+
+  static double getSimpleNumber(String s) {
+ 
+ 
+ 
+ 

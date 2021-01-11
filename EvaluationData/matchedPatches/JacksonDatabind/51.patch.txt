@@ -1,0 +1,16 @@
+/Users/SE4Test/Downloads/checkout/JacksonDatabind+51+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackdata_51_fix/src/main/java/com/fasterxml/jackson/databind/jsontype/impl/TypeDeserializerBase.java b/Users/SE4Test/Downloads/checkout/jackdata_51_buggy/src/main/java/com/fasterxml/jackson/databind/jsontype/impl/TypeDeserializerBase.java
+index cd9b155..23380f0 100644
+--- a/Users/SE4Test/Downloads/checkout/jackdata_51_fix/src/main/java/com/fasterxml/jackson/databind/jsontype/impl/TypeDeserializerBase.java
++++ b/Users/SE4Test/Downloads/checkout/jackdata_51_buggy/src/main/java/com/fasterxml/jackson/databind/jsontype/impl/TypeDeserializerBase.java
+@@ -181,9 +181,7 @@ public abstract class TypeDeserializerBase
+                    //   generic type with custom type resolvers. If so, should try to retain them.
+                    //  Whether this is sufficient to avoid problems remains to be seen, but for
+                    //  now it should improve things.
+[-                    if (!type.hasGenericTypes()) {-]
+                        type = ctxt.getTypeFactory().constructSpecializedType(_baseType, type.getRawClass());
+[-                    }-]
+                }
+                deser = ctxt.findContextualValueDeserializer(type, _property);
+            }
+ 

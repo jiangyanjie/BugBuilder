@@ -1,0 +1,20 @@
+/Users/SE4Test/Downloads/checkout/JxPath+22+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jxpath_22_fix/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java b/Users/SE4Test/Downloads/checkout/jxpath_22_buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+index f1a1b2b..f8e3b1a 100644
+--- a/Users/SE4Test/Downloads/checkout/jxpath_22_fix/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
++++ b/Users/SE4Test/Downloads/checkout/jxpath_22_buggy/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java
+@@ -686,14 +686,14 @@ public class DOMNodePointer extends NodePointer {
+                if (aNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Attr attr = ((Element) aNode).getAttributeNode(qname);
+                    if (attr != null) {
+                        [-uri =-]{+return+} attr.getValue();[-break;-]
+                    }
+                }
+                aNode = aNode.getParentNode();
+            }
+            {+return null;+}
+        }
+        return[-"".equals(uri) ? null :-] uri;
+    }
+
+    public Object getValue() {

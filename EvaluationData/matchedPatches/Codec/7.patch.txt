@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/Codec_+7+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/codec_7_fix/src/java/org/apache/commons/codec/binary/Base64.java b/Users/SE4Test/Downloads/checkout/codec_7_buggy/src/java/org/apache/commons/codec/binary/Base64.java
+index a5c44ab..19a6959 100644
+--- a/Users/SE4Test/Downloads/checkout/codec_7_fix/src/java/org/apache/commons/codec/binary/Base64.java
++++ b/Users/SE4Test/Downloads/checkout/codec_7_buggy/src/java/org/apache/commons/codec/binary/Base64.java
+@@ -667,7 +667,7 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
+     * @since 1.4
+     */    
+    public static String encodeBase64String(byte[] binaryData) {
+        return StringUtils.newStringUtf8(encodeBase64(binaryData, [-false));-]{+true));+}
+    }
+    
+    /**
+ 

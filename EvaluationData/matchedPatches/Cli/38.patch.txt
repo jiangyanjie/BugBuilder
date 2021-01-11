@@ -1,0 +1,17 @@
+/Users/SE4Test/Downloads/checkout/Cli+38+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/Cli_38_fix/src/main/java/org/apache/commons/cli/DefaultParser.java b/Users/SE4Test/Downloads/checkout/Cli_38_buggy/src/main/java/org/apache/commons/cli/DefaultParser.java
+index 2cee432..4bff7f3 100644
+--- a/Users/SE4Test/Downloads/checkout/Cli_38_fix/src/main/java/org/apache/commons/cli/DefaultParser.java
++++ b/Users/SE4Test/Downloads/checkout/Cli_38_buggy/src/main/java/org/apache/commons/cli/DefaultParser.java
+@@ -307,12 +307,8 @@ public class DefaultParser implements CommandLineParser
+        // remove leading "-" and "=value"
+        int pos = token.indexOf("=");
+        String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);
+[-if (options.hasShortOption(optName))-]
+[-        {-]        return [-true;-]
+[-        }-]{+options.hasShortOption(optName);+}
+        // check for several concatenated short options
+[-        return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));-]
+    }
+
+    /**

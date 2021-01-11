@@ -1,0 +1,15 @@
+/Users/SE4Test/Downloads/checkout/JacksonCore_+11+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackcore_11_fix/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java b/Users/SE4Test/Downloads/checkout/jackcore_11_buggy/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
+index d9e6c4f..f19acc7 100644
+--- a/Users/SE4Test/Downloads/checkout/jackcore_11_fix/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
++++ b/Users/SE4Test/Downloads/checkout/jackcore_11_buggy/src/main/java/com/fasterxml/jackson/core/sym/ByteQuadsCanonicalizer.java
+@@ -879,7 +879,6 @@ public final class ByteQuadsCanonicalizer
+            _hashShared = false;
+            // 09-Sep-2015, tatu: As per [jackson-core#216], also need to ensure
+            //    we rehash as needed, as need-rehash flag is not copied from parent
+[-            _verifyNeedForRehash();-]
+        }
+        if (_needRehash) {
+            rehash();
+ 
+ 

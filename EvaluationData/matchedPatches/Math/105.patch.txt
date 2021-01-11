@@ -1,0 +1,13 @@
+/Users/SE4Test/Downloads/checkout/Math+105+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/math_105_fix/src/java/org/apache/commons/math/stat/regression/SimpleRegression.java b/Users/SE4Test/Downloads/checkout/math_105_buggy/src/java/org/apache/commons/math/stat/regression/SimpleRegression.java
+index d9fa592..dcf512b 100644
+--- a/Users/SE4Test/Downloads/checkout/math_105_fix/src/java/org/apache/commons/math/stat/regression/SimpleRegression.java
++++ b/Users/SE4Test/Downloads/checkout/math_105_buggy/src/java/org/apache/commons/math/stat/regression/SimpleRegression.java
+@@ -261,7 +261,7 @@ public class SimpleRegression implements Serializable {
+     * @return sum of squared errors associated with the regression model
+     */
+    public double getSumSquaredErrors() {
+        return[-Math.max(0d,-] sumYY - sumXY * sumXY / [-sumXX);-]{+sumXX;+}
+    }
+
+    /**

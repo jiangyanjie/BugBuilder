@@ -1,0 +1,16 @@
+/Users/SE4Test/Downloads/checkout/Jsoup+62+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jsoup_62_fix/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java b/Users/SE4Test/Downloads/checkout/jsoup_62_buggy/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java
+index e641a21..c515462 100644
+--- a/Users/SE4Test/Downloads/checkout/jsoup_62_fix/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java
++++ b/Users/SE4Test/Downloads/checkout/jsoup_62_buggy/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java
+@@ -761,7 +761,7 @@ enum HtmlTreeBuilderState {
+        }
+
+        boolean anyOtherEndTag(Token t, HtmlTreeBuilder tb) {
+            String name = [-t.asEndTag().name(); // matches with case sensitivity if enabled-]{+t.asEndTag().normalName();+}
+            ArrayList<Element> stack = tb.getStack();
+            for (int pos = stack.size() -1; pos >= 0; pos--) {
+                Element node = stack.get(pos);
+ 
+ 
+ 

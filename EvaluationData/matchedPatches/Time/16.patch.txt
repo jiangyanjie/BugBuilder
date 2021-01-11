@@ -1,0 +1,13 @@
+/Users/SE4Test/Downloads/checkout/Time+16+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/time_16_fix/src/main/java/org/joda/time/format/DateTimeFormatter.java b/Users/SE4Test/Downloads/checkout/time_16_buggy/src/main/java/org/joda/time/format/DateTimeFormatter.java
+index baa276a..a4b1612 100644
+--- a/Users/SE4Test/Downloads/checkout/time_16_fix/src/main/java/org/joda/time/format/DateTimeFormatter.java
++++ b/Users/SE4Test/Downloads/checkout/time_16_buggy/src/main/java/org/joda/time/format/DateTimeFormatter.java
+@@ -706,7 +706,7 @@ public class DateTimeFormatter {
+        chrono = selectChronology(chrono);
+        
+        DateTimeParserBucket bucket = new DateTimeParserBucket(
+            instantLocal, chrono, iLocale, iPivotYear, [-chrono.year().get(instantLocal));-]{+iDefaultYear);+}
+        int newPos = parser.parseInto(bucket, text, position);
+        instant.setMillis(bucket.computeMillis(false, text));
+        if (iOffsetParsed && bucket.getOffsetInteger() != null) {

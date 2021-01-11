@@ -1,0 +1,49 @@
+/Users/SE4Test/Downloads/checkout/Compress_+4+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/compress_4_fix/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java b/Users/SE4Test/Downloads/checkout/compress_4_buggy/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java
+index 959df8d..3641ab6 100644
+--- a/Users/SE4Test/Downloads/checkout/compress_4_fix/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java
++++ b/Users/SE4Test/Downloads/checkout/compress_4_buggy/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java
+@@ -333,6 +333,7 @@ public class CpioArchiveOutputStream extends ArchiveOutputStream implements
+     */
+    public void close() throws IOException {
+        if (!this.closed) {
+            {+this.finish();+}
+            out.close();
+            this.closed = true;
+        }
+diff --git a/Users/SE4Test/Downloads/checkout/compress_4_fix/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java b/Users/SE4Test/Downloads/checkout/compress_4_buggy/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+index d3afc3d..abe8759 100644
+--- a/Users/SE4Test/Downloads/checkout/compress_4_fix/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
++++ b/Users/SE4Test/Downloads/checkout/compress_4_buggy/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+@@ -123,6 +123,7 @@ public class TarArchiveOutputStream extends ArchiveOutputStream {
+     */
+    public void close() throws IOException {
+        if (!closed) {
+            {+finish();+}
+            buffer.close();
+            out.close();
+            closed = true;
+diff --git a/Users/SE4Test/Downloads/checkout/compress_4_fix/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream.java b/Users/SE4Test/Downloads/checkout/compress_4_buggy/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream.java
+index 11808a9..5aa7c87 100644
+--- a/Users/SE4Test/Downloads/checkout/compress_4_fix/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream.java
++++ b/Users/SE4Test/Downloads/checkout/compress_4_buggy/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream.java
+@@ -527,6 +527,7 @@ public class ZipArchiveOutputStream extends ArchiveOutputStream {
+     * @exception  IOException  if an I/O error occurs.
+     */
+    public void close() throws IOException {
+        {+finish();+}
+        if (raf != null) {
+            raf.close();
+        }
+diff --git a/Users/SE4Test/Downloads/checkout/compress_4_fix/src/main/java/org/apache/commons/compress/changes/ChangeSetPerformer.java b/Users/SE4Test/Downloads/checkout/compress_4_buggy/src/main/java/org/apache/commons/compress/changes/ChangeSetPerformer.java
+index 778c2aa..ec8e2cf 100644
+--- a/Users/SE4Test/Downloads/checkout/compress_4_fix/src/main/java/org/apache/commons/compress/changes/ChangeSetPerformer.java
++++ b/Users/SE4Test/Downloads/checkout/compress_4_buggy/src/main/java/org/apache/commons/compress/changes/ChangeSetPerformer.java
+@@ -125,7 +125,6 @@ public class ChangeSetPerformer {
+                results.addedFromChangeSet(change.getEntry().getName());
+            }
+        }
+[-        out.finish();-]
+        return results;
+    }
+

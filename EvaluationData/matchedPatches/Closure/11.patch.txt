@@ -1,0 +1,16 @@
+/Users/SE4Test/Downloads/checkout/Closure+11+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_11_fix/src/com/google/javascript/jscomp/TypeCheck.java b/Users/SE4Test/Downloads/checkout/closure_11_buggy/src/com/google/javascript/jscomp/TypeCheck.java
+index e428dfa..ae8a320 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_11_fix/src/com/google/javascript/jscomp/TypeCheck.java
++++ b/Users/SE4Test/Downloads/checkout/closure_11_buggy/src/com/google/javascript/jscomp/TypeCheck.java
+@@ -1311,6 +1311,8 @@ public class TypeCheck implements NodeTraversal.Callback, CompilerPass {
+
+    if (childType.isDict()) {
+      report(t, property, TypeValidator.ILLEGAL_PROPERTY_ACCESS, "'.'", "dict");
+    {+} else if (n.getJSType() != null && parent.isAssign()) {+}
+{+      return;+}
+    } else if (validator.expectNotNullOrUndefined(t, n, childType,
+        "No properties on this expression", getNativeType(OBJECT_TYPE))) {
+      checkPropertyAccess(childType, property.getString(), t, n);
+ 
+ 

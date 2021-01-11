@@ -1,0 +1,16 @@
+/Users/SE4Test/Downloads/checkout/JacksonDatabind+71+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackdata_71_fix/src/main/java/com/fasterxml/jackson/databind/deser/std/StdKeyDeserializer.java b/Users/SE4Test/Downloads/checkout/jackdata_71_buggy/src/main/java/com/fasterxml/jackson/databind/deser/std/StdKeyDeserializer.java
+index 8bddce4..d95749a 100644
+--- a/Users/SE4Test/Downloads/checkout/jackdata_71_fix/src/main/java/com/fasterxml/jackson/databind/deser/std/StdKeyDeserializer.java
++++ b/Users/SE4Test/Downloads/checkout/jackdata_71_buggy/src/main/java/com/fasterxml/jackson/databind/deser/std/StdKeyDeserializer.java
+@@ -72,7 +72,7 @@ public class StdKeyDeserializer extends KeyDeserializer
+        int kind;
+
+        // first common types:
+        if (raw == String.class || raw == [-Object.class || raw == CharSequence.class)-]{+Object.class)+} {
+            return StringKD.forType(raw);
+        } else if (raw == UUID.class) {
+            kind = TYPE_UUID;
+ 
+ 
+ 

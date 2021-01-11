@@ -1,0 +1,12 @@
+/Users/SE4Test/Downloads/checkout/Math+10+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/math_10_fix/src/main/java/org/apache/commons/math3/analysis/differentiation/DSCompiler.java b/Users/SE4Test/Downloads/checkout/math_10_buggy/src/main/java/org/apache/commons/math3/analysis/differentiation/DSCompiler.java
+index d5a3c18..bf6dd65 100644
+--- a/Users/SE4Test/Downloads/checkout/math_10_fix/src/main/java/org/apache/commons/math3/analysis/differentiation/DSCompiler.java
++++ b/Users/SE4Test/Downloads/checkout/math_10_buggy/src/main/java/org/apache/commons/math3/analysis/differentiation/DSCompiler.java
+@@ -1416,7 +1416,6 @@ public class DSCompiler {
+        }
+
+        // fix value to take special cases (+0/+0, +0/-0, -0/+0, -0/-0, +/-infinity) correctly
+[-        result[resultOffset] = FastMath.atan2(y[yOffset], x[xOffset]);-]
+
+    }

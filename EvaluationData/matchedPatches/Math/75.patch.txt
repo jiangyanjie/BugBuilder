@@ -1,0 +1,13 @@
+/Users/SE4Test/Downloads/checkout/Math+75+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/math_75_fix/src/main/java/org/apache/commons/math/stat/Frequency.java b/Users/SE4Test/Downloads/checkout/math_75_buggy/src/main/java/org/apache/commons/math/stat/Frequency.java
+index 68c8bf2..c45d728 100644
+--- a/Users/SE4Test/Downloads/checkout/math_75_fix/src/main/java/org/apache/commons/math/stat/Frequency.java
++++ b/Users/SE4Test/Downloads/checkout/math_75_buggy/src/main/java/org/apache/commons/math/stat/Frequency.java
+@@ -300,7 +300,7 @@ public class Frequency implements Serializable {
+     */
+    @Deprecated
+    public double getPct(Object v) {
+        return [-getPct((Comparable<?>)-]{+getCumPct((Comparable<?>)+} v);
+    }
+
+    /**

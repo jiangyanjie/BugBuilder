@@ -1,0 +1,24 @@
+/Users/SE4Test/Downloads/checkout/JacksonDatabind+100+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackdata_100_fix/src/main/java/com/fasterxml/jackson/databind/node/TreeTraversingParser.java b/Users/SE4Test/Downloads/checkout/jackdata_100_buggy/src/main/java/com/fasterxml/jackson/databind/node/TreeTraversingParser.java
+index 40bf3d3..9d2f74b 100644
+--- a/Users/SE4Test/Downloads/checkout/jackdata_100_fix/src/main/java/com/fasterxml/jackson/databind/node/TreeTraversingParser.java
++++ b/Users/SE4Test/Downloads/checkout/jackdata_100_buggy/src/main/java/com/fasterxml/jackson/databind/node/TreeTraversingParser.java
+@@ -360,10 +360,16 @@ public class TreeTraversingParser extends ParserMinimalBase
+        if (n != null) {
+            // [databind#2096]: although `binaryValue()` works for real binary node
+            // and embedded "POJO" node, coercion from TextNode may require variant, so:
+            {+byte[] data = n.binaryValue();+}
+            if [-(n-]{+(data != null) {+}
+{+                return data;+}
+{+            }+}
+{+            if (n.isPojo()) {+}
+{+                Object ob = ((POJONode) n).getPojo();+}
+{+                if (ob+} instanceof [-TextNode)-]{+byte[])+} {
+                    return [-((TextNode) n).getBinaryValue(b64variant);-]{+(byte[]) ob;+}
+{+                }+}
+            }
+[-            return n.binaryValue();-]
+        }
+        // otherwise return null to mark we have no binary content
+        return null;
+ 

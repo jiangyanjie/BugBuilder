@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/Jsoup+32+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jsoup_32_fix/src/main/java/org/jsoup/nodes/Element.java b/Users/SE4Test/Downloads/checkout/jsoup_32_buggy/src/main/java/org/jsoup/nodes/Element.java
+index 95cde5f..7906822 100644
+--- a/Users/SE4Test/Downloads/checkout/jsoup_32_fix/src/main/java/org/jsoup/nodes/Element.java
++++ b/Users/SE4Test/Downloads/checkout/jsoup_32_buggy/src/main/java/org/jsoup/nodes/Element.java
+@@ -1135,7 +1135,7 @@ public class Element extends Node {
+    @Override
+    public Element clone() {
+        Element clone = (Element) super.clone();
+        [-clone.classNames = null; // derived on first hit, otherwise gets a pointer to source classnames-]{+clone.classNames();+}
+        return clone;
+    }
+}
+ 

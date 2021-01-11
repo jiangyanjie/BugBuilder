@@ -1,0 +1,16 @@
+/Users/SE4Test/Downloads/checkout/Gson_+18+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/gson_18_fix/gson/src/main/java/com/google/gson/internal/$Gson$Types.java b/Users/SE4Test/Downloads/checkout/gson_18_buggy/gson/src/main/java/com/google/gson/internal/$Gson$Types.java
+index adea605..f86ad36 100644
+--- a/Users/SE4Test/Downloads/checkout/gson_18_fix/gson/src/main/java/com/google/gson/internal/$Gson$Types.java
++++ b/Users/SE4Test/Downloads/checkout/gson_18_buggy/gson/src/main/java/com/google/gson/internal/$Gson$Types.java
+@@ -275,10 +275,7 @@ public final class $Gson$Types {
+   * @param supertype a superclass of, or interface implemented by, this.
+   */
+  static Type getSupertype(Type context, Class<?> contextRawType, Class<?> supertype) {
+[-    if (context instanceof WildcardType) {-]
+      // wildcards are useless for resolving supertypes. As the upper bound has the same raw type, use it instead
+[-      context = ((WildcardType)context).getUpperBounds()[0];-]
+[-    }-]
+    checkArgument(supertype.isAssignableFrom(contextRawType));
+    return resolve(context, contextRawType,
+        $Gson$Types.getGenericSupertype(context, contextRawType, supertype));

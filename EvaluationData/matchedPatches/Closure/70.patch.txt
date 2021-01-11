@@ -1,0 +1,14 @@
+ 
+/Users/SE4Test/Downloads/checkout/Closure+70+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_70_fix/src/com/google/javascript/jscomp/TypedScopeCreator.java b/Users/SE4Test/Downloads/checkout/closure_70_buggy/src/com/google/javascript/jscomp/TypedScopeCreator.java
+index aa7e245..210bb66 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_70_fix/src/com/google/javascript/jscomp/TypedScopeCreator.java
++++ b/Users/SE4Test/Downloads/checkout/closure_70_buggy/src/com/google/javascript/jscomp/TypedScopeCreator.java
+@@ -1742,7 +1742,7 @@ final class TypedScopeCreator implements ScopeCreator {
+          for (Node astParameter : astParameters.children()) {
+            if (jsDocParameter != null) {
+              defineSlot(astParameter, functionNode,
+                  jsDocParameter.getJSType(), [-false);-]{+true);+}
+              jsDocParameter = jsDocParameter.getNext();
+            } else {
+              defineSlot(astParameter, functionNode, null, true);

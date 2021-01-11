@@ -1,0 +1,13 @@
+/Users/SE4Test/Downloads/checkout/JacksonDatabind+46+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackdata_46_fix/src/main/java/com/fasterxml/jackson/databind/type/ReferenceType.java b/Users/SE4Test/Downloads/checkout/jackdata_46_buggy/src/main/java/com/fasterxml/jackson/databind/type/ReferenceType.java
+index 6083faf..b724510 100644
+--- a/Users/SE4Test/Downloads/checkout/jackdata_46_fix/src/main/java/com/fasterxml/jackson/databind/type/ReferenceType.java
++++ b/Users/SE4Test/Downloads/checkout/jackdata_46_buggy/src/main/java/com/fasterxml/jackson/databind/type/ReferenceType.java
+@@ -153,7 +153,7 @@ public class ReferenceType extends SimpleType
+        _classSignature(_class, sb, false);
+        sb.append('<');
+        sb = _referencedType.getGenericSignature(sb);
+        [-sb.append(">;");-]{+sb.append(';');+}
+        return sb;
+    }
+    

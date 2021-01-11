@@ -1,0 +1,15 @@
+/Users/SE4Test/Downloads/checkout/Closure+133+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_133_fix/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java b/Users/SE4Test/Downloads/checkout/closure_133_buggy/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
+index ce94573..6e3294b 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_133_fix/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
++++ b/Users/SE4Test/Downloads/checkout/closure_133_buggy/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
+@@ -2398,7 +2398,6 @@ public final class JsDocInfoParser {
+   */
+  private String getRemainingJSDocLine() {
+    String result = stream.getRemainingJSDocLine();
+[-    unreadToken = NO_UNREAD_TOKEN;-]
+    return result;
+  }
+
+ 
+ 

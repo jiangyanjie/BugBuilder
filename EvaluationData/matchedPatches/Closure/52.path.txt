@@ -1,0 +1,14 @@
+ 
+/Users/SE4Test/Downloads/checkout/Closure+52+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_52_fix/src/com/google/javascript/jscomp/CodeGenerator.java b/Users/SE4Test/Downloads/checkout/closure_52_buggy/src/com/google/javascript/jscomp/CodeGenerator.java
+index 535148c..ac6299d 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_52_fix/src/com/google/javascript/jscomp/CodeGenerator.java
++++ b/Users/SE4Test/Downloads/checkout/closure_52_buggy/src/com/google/javascript/jscomp/CodeGenerator.java
+@@ -742,7 +742,7 @@ class CodeGenerator {
+        return false;
+      }
+    }
+    return len > [-0 && s.charAt(0) != '0';-]{+0;+}
+  }
+
+  static double getSimpleNumber(String s) {

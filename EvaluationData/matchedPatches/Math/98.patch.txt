@@ -1,0 +1,26 @@
+/Users/SE4Test/Downloads/checkout/Math+98+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/math_98_fix/src/java/org/apache/commons/math/linear/BigMatrixImpl.java b/Users/SE4Test/Downloads/checkout/math_98_buggy/src/java/org/apache/commons/math/linear/BigMatrixImpl.java
+index 919a5ba..7cd61cb 100644
+--- a/Users/SE4Test/Downloads/checkout/math_98_fix/src/java/org/apache/commons/math/linear/BigMatrixImpl.java
++++ b/Users/SE4Test/Downloads/checkout/math_98_buggy/src/java/org/apache/commons/math/linear/BigMatrixImpl.java
+@@ -988,7 +988,7 @@ public class BigMatrixImpl implements BigMatrix, Serializable {
+        }
+        final int nRows = this.getRowDimension();
+        final int nCols = this.getColumnDimension();
+        final BigDecimal[] out = new [-BigDecimal[nRows];-]{+BigDecimal[v.length];+}
+        for (int row = 0; row < nRows; row++) {
+            BigDecimal sum = ZERO;
+            for (int i = 0; i < nCols; i++) {
+diff --git a/Users/SE4Test/Downloads/checkout/math_98_fix/src/java/org/apache/commons/math/linear/RealMatrixImpl.java b/Users/SE4Test/Downloads/checkout/math_98_buggy/src/java/org/apache/commons/math/linear/RealMatrixImpl.java
+index 3a717ff..7910644 100644
+--- a/Users/SE4Test/Downloads/checkout/math_98_fix/src/java/org/apache/commons/math/linear/RealMatrixImpl.java
++++ b/Users/SE4Test/Downloads/checkout/math_98_buggy/src/java/org/apache/commons/math/linear/RealMatrixImpl.java
+@@ -776,7 +776,7 @@ public class RealMatrixImpl implements RealMatrix, Serializable {
+        if (v.length != nCols) {
+            throw new IllegalArgumentException("vector has wrong length");
+        }
+        final double[] out = new [-double[nRows];-]{+double[v.length];+}
+        for (int row = 0; row < nRows; row++) {
+            final double[] dataRow = data[row];
+            double sum = 0;
+ 

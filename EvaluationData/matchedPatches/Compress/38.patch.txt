@@ -1,0 +1,15 @@
+/Users/SE4Test/Downloads/checkout/Compress_+38+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/compress_38_fix/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java b/Users/SE4Test/Downloads/checkout/compress_38_buggy/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java
+index a5050bf..941bbbd 100644
+--- a/Users/SE4Test/Downloads/checkout/compress_38_fix/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java
++++ b/Users/SE4Test/Downloads/checkout/compress_38_buggy/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java
+@@ -856,7 +856,7 @@ public class TarArchiveEntry implements TarConstants, ArchiveEntry {
+            return true;
+        }
+
+        if [-(!isPaxHeader() && !isGlobalPaxHeader() && getName().endsWith("/"))-]{+(getName().endsWith("/"))+} {
+            return true;
+        }
+
+ 
+ 

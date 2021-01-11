@@ -1,0 +1,15 @@
+ 
+/Users/SE4Test/Downloads/checkout/JacksonCore_+25+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackcore_25_fix/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java b/Users/SE4Test/Downloads/checkout/jackcore_25_buggy/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+index f38e4aa..2c1f5a2 100644
+--- a/Users/SE4Test/Downloads/checkout/jackcore_25_fix/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
++++ b/Users/SE4Test/Downloads/checkout/jackcore_25_buggy/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+@@ -1960,7 +1960,7 @@ public class ReaderBasedJsonParser // final in 2.3, earlier
+            }
+            char c = _inputBuffer[_inputPtr];
+            int i = (int) c;
+            if (i [-<-]{+<=+} maxCode) {
+                if (codes[i] != 0) {
+                    break;
+                }
+ 

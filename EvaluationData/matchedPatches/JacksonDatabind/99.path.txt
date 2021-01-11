@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/JacksonDatabind+99+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackdata_99_fix/src/main/java/com/fasterxml/jackson/databind/type/ReferenceType.java b/Users/SE4Test/Downloads/checkout/jackdata_99_buggy/src/main/java/com/fasterxml/jackson/databind/type/ReferenceType.java
+index e8c6962..4add34e 100644
+--- a/Users/SE4Test/Downloads/checkout/jackdata_99_fix/src/main/java/com/fasterxml/jackson/databind/type/ReferenceType.java
++++ b/Users/SE4Test/Downloads/checkout/jackdata_99_buggy/src/main/java/com/fasterxml/jackson/databind/type/ReferenceType.java
+@@ -166,7 +166,6 @@ public class ReferenceType extends SimpleType
+        sb.append(_class.getName());
+        sb.append('<');
+        sb.append(_referencedType.toCanonical());
+[-        sb.append('>');-]
+        return sb.toString();
+    }
+
+ 

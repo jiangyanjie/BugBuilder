@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/JacksonDatabind+49+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackdata_49_fix/src/main/java/com/fasterxml/jackson/databind/ser/impl/WritableObjectId.java b/Users/SE4Test/Downloads/checkout/jackdata_49_buggy/src/main/java/com/fasterxml/jackson/databind/ser/impl/WritableObjectId.java
+index d842694..af141e1 100644
+--- a/Users/SE4Test/Downloads/checkout/jackdata_49_fix/src/main/java/com/fasterxml/jackson/databind/ser/impl/WritableObjectId.java
++++ b/Users/SE4Test/Downloads/checkout/jackdata_49_buggy/src/main/java/com/fasterxml/jackson/databind/ser/impl/WritableObjectId.java
+@@ -47,9 +47,7 @@ public final class WritableObjectId
+        // 04-Jun-2016, tatu: As per [databind#1255], need to consider possibility of
+        //    id being generated for "alwaysAsId", but not being written as POJO; regardless,
+        //    need to use existing id if there is one:
+[-        if (id == null) {-]
+            id = generator.generateId(forPojo);
+[-        }-]
+        return id;
+    }

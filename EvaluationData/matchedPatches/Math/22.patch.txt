@@ -1,0 +1,27 @@
+/Users/SE4Test/Downloads/checkout/Math+22+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/math_22_fix/src/main/java/org/apache/commons/math3/distribution/FDistribution.java b/Users/SE4Test/Downloads/checkout/math_22_buggy/src/main/java/org/apache/commons/math3/distribution/FDistribution.java
+index e301e2e..8b0993c 100644
+--- a/Users/SE4Test/Downloads/checkout/math_22_fix/src/main/java/org/apache/commons/math3/distribution/FDistribution.java
++++ b/Users/SE4Test/Downloads/checkout/math_22_buggy/src/main/java/org/apache/commons/math3/distribution/FDistribution.java
+@@ -272,7 +272,7 @@ public class FDistribution extends AbstractRealDistribution {
+
+    /** {@inheritDoc} */
+    public boolean isSupportLowerBoundInclusive() {
+        return [-false;-]{+true;+}
+    }
+
+    /** {@inheritDoc} */
+diff --git a/Users/SE4Test/Downloads/checkout/math_22_fix/src/main/java/org/apache/commons/math3/distribution/UniformRealDistribution.java b/Users/SE4Test/Downloads/checkout/math_22_buggy/src/main/java/org/apache/commons/math3/distribution/UniformRealDistribution.java
+index 0d279de..5d32f6e 100644
+--- a/Users/SE4Test/Downloads/checkout/math_22_fix/src/main/java/org/apache/commons/math3/distribution/UniformRealDistribution.java
++++ b/Users/SE4Test/Downloads/checkout/math_22_buggy/src/main/java/org/apache/commons/math3/distribution/UniformRealDistribution.java
+@@ -181,7 +181,7 @@ public class UniformRealDistribution extends AbstractRealDistribution {
+
+    /** {@inheritDoc} */
+    public boolean isSupportUpperBoundInclusive() {
+        return [-true;-]{+false;+}
+    }
+
+    /**
+ 
+ 

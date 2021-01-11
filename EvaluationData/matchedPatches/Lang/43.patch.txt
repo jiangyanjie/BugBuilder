@@ -1,0 +1,13 @@
+/Users/SE4Test/Downloads/checkout/Lang+43+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/lang_43_fix/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java b/Users/SE4Test/Downloads/checkout/lang_43_buggy/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java
+index 4af3955..404be49 100644
+--- a/Users/SE4Test/Downloads/checkout/lang_43_fix/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java
++++ b/Users/SE4Test/Downloads/checkout/lang_43_buggy/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java
+@@ -419,7 +419,6 @@ public class ExtendedMessageFormat extends MessageFormat {
+        int start = pos.getIndex();
+        char[] c = pattern.toCharArray();
+        if (escapingOn && c[start] == QUOTE) {
+[-            next(pos);-]
+            return appendTo == null ? null : appendTo.append(QUOTE);
+        }
+        int lastHold = start;

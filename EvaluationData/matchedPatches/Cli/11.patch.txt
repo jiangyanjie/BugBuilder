@@ -1,0 +1,17 @@
+/Users/SE4Test/Downloads/checkout/Cli+11+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/Cli_11_fix/src/java/org/apache/commons/cli/HelpFormatter.java b/Users/SE4Test/Downloads/checkout/Cli_11_buggy/src/java/org/apache/commons/cli/HelpFormatter.java
+index 9a841fd..183cae3 100644
+--- a/Users/SE4Test/Downloads/checkout/Cli_11_fix/src/java/org/apache/commons/cli/HelpFormatter.java
++++ b/Users/SE4Test/Downloads/checkout/Cli_11_buggy/src/java/org/apache/commons/cli/HelpFormatter.java
+@@ -629,7 +629,7 @@ public class HelpFormatter {
+        }
+
+        // if the Option has a value
+        if (option.hasArg() && [-option.hasArgName())-]{+(option.getArgName() != null))+}
+        {
+            buff.append(" <").append(option.getArgName()).append(">");
+        }
+ 
+ 
+ 
+ 

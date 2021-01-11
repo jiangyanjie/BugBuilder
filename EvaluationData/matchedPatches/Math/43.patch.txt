@@ -1,0 +1,20 @@
+/Users/SE4Test/Downloads/checkout/Math+43+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/math_43_fix/src/main/java/org/apache/commons/math/stat/descriptive/SummaryStatistics.java b/Users/SE4Test/Downloads/checkout/math_43_buggy/src/main/java/org/apache/commons/math/stat/descriptive/SummaryStatistics.java
+index da987cd..1203d51 100644
+--- a/Users/SE4Test/Downloads/checkout/math_43_fix/src/main/java/org/apache/commons/math/stat/descriptive/SummaryStatistics.java
++++ b/Users/SE4Test/Downloads/checkout/math_43_buggy/src/main/java/org/apache/commons/math/stat/descriptive/SummaryStatistics.java
+@@ -155,13 +155,13 @@ public class SummaryStatistics implements StatisticalSummary, Serializable {
+        secondMoment.increment(value);
+        // If mean, variance or geomean have been overridden,
+        // need to increment these
+        if [-(meanImpl != mean)-]{+(!(meanImpl instanceof Mean))+} {
+            meanImpl.increment(value);
+        }
+        if [-(varianceImpl != variance)-]{+(!(varianceImpl instanceof Variance))+} {
+            varianceImpl.increment(value);
+        }
+        if [-(geoMeanImpl != geoMean)-]{+(!(geoMeanImpl instanceof GeometricMean))+} {
+            geoMeanImpl.increment(value);
+        }
+        n++;
+ 

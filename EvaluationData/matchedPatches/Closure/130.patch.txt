@@ -1,0 +1,16 @@
+/Users/SE4Test/Downloads/checkout/Closure+130+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/closure_130_fix/src/com/google/javascript/jscomp/CollapseProperties.java b/Users/SE4Test/Downloads/checkout/closure_130_buggy/src/com/google/javascript/jscomp/CollapseProperties.java
+index f86625f..ab2d2c7 100644
+--- a/Users/SE4Test/Downloads/checkout/closure_130_fix/src/com/google/javascript/jscomp/CollapseProperties.java
++++ b/Users/SE4Test/Downloads/checkout/closure_130_buggy/src/com/google/javascript/jscomp/CollapseProperties.java
+@@ -169,7 +169,7 @@ class CollapseProperties implements CompilerPass {
+        continue;
+      }
+
+      if [-(!name.inExterns && name.globalSets-]{+(name.globalSets+} == 1 && name.localSets == 0 &&
+          name.aliasingGets > 0) {
+        // {@code name} meets condition (b). Find all of its local aliases
+        // and try to inline them.
+ 
+ 
+ 

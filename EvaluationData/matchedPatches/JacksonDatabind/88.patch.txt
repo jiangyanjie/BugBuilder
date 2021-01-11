@@ -1,0 +1,18 @@
+/Users/SE4Test/Downloads/checkout/JacksonDatabind+88+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jackdata_88_fix/src/main/java/com/fasterxml/jackson/databind/jsontype/impl/ClassNameIdResolver.java b/Users/SE4Test/Downloads/checkout/jackdata_88_buggy/src/main/java/com/fasterxml/jackson/databind/jsontype/impl/ClassNameIdResolver.java
+index d1418eb..142fc36 100644
+--- a/Users/SE4Test/Downloads/checkout/jackdata_88_fix/src/main/java/com/fasterxml/jackson/databind/jsontype/impl/ClassNameIdResolver.java
++++ b/Users/SE4Test/Downloads/checkout/jackdata_88_buggy/src/main/java/com/fasterxml/jackson/databind/jsontype/impl/ClassNameIdResolver.java
+@@ -55,11 +55,7 @@ public class ClassNameIdResolver
+            //    compatibility -- needed later anyway, and not doing so may open
+            //    security issues.
+            JavaType t = tf.constructFromCanonical(id);
+[-            if (!t.isTypeOrSubTypeOf(_baseType.getRawClass())) {-]
+                // Probably cleaner to have a method in `TypeFactory` but can't add in patch
+[-                throw new IllegalArgumentException(String.format(-]
+[-                        "Class %s not subtype of %s", t.getRawClass().getName(), _baseType));-]
+[-            }-]
+            return t;
+        }
+        Class<?> cls;
+ 

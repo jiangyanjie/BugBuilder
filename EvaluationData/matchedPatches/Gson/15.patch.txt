@@ -1,0 +1,15 @@
+/Users/SE4Test/Downloads/checkout/Gson_+15+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/gson_15_fix/gson/src/main/java/com/google/gson/stream/JsonWriter.java b/Users/SE4Test/Downloads/checkout/gson_15_buggy/gson/src/main/java/com/google/gson/stream/JsonWriter.java
+index 8148816..043c3bd 100644
+--- a/Users/SE4Test/Downloads/checkout/gson_15_fix/gson/src/main/java/com/google/gson/stream/JsonWriter.java
++++ b/Users/SE4Test/Downloads/checkout/gson_15_buggy/gson/src/main/java/com/google/gson/stream/JsonWriter.java
+@@ -492,7 +492,7 @@ public class JsonWriter implements Closeable, Flushable {
+   */
+  public JsonWriter value(double value) throws IOException {
+    writeDeferredName();
+    if[-(!lenient &&-] (Double.isNaN(value) || [-Double.isInfinite(value)))-]{+Double.isInfinite(value))+} {
+      throw new IllegalArgumentException("Numeric values must be finite, but was " + value);
+    }
+    beforeValue();
+ 
+ 

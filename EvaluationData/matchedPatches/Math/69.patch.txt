@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/Math+69+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/math_69_fix/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java b/Users/SE4Test/Downloads/checkout/math_69_buggy/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java
+index dc83314..83b4c41 100644
+--- a/Users/SE4Test/Downloads/checkout/math_69_fix/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java
++++ b/Users/SE4Test/Downloads/checkout/math_69_buggy/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java
+@@ -168,7 +168,7 @@ public class PearsonsCorrelation {
+                } else {
+                    double r = correlationMatrix.getEntry(i, j);
+                    double t = Math.abs(r * Math.sqrt((nObs - 2)/(1 - r * r)));
+                    out[i][j] = 2 * [-tDistribution.cumulativeProbability(-t);-]{+(1 - tDistribution.cumulativeProbability(t));+}
+                }
+            }
+        }
+ 

@@ -1,0 +1,17 @@
+/Users/SE4Test/Downloads/checkout/Gson_+13+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/gson_13_fix/gson/src/main/java/com/google/gson/stream/JsonReader.java b/Users/SE4Test/Downloads/checkout/gson_13_buggy/gson/src/main/java/com/google/gson/stream/JsonReader.java
+index 9cbc62f..877742b 100644
+--- a/Users/SE4Test/Downloads/checkout/gson_13_fix/gson/src/main/java/com/google/gson/stream/JsonReader.java
++++ b/Users/SE4Test/Downloads/checkout/gson_13_buggy/gson/src/main/java/com/google/gson/stream/JsonReader.java
+@@ -728,7 +728,7 @@ public class JsonReader implements Closeable {
+    }
+
+    // We've read a complete number. Decide if it's a PEEKED_LONG or a PEEKED_NUMBER.
+    if (last == NUMBER_CHAR_DIGIT && fitsInLong && (value != Long.MIN_VALUE || [-negative) && (value!=0 || false==negative))-]{+negative))+} {
+      peekedLong = negative ? value : -value;
+      pos += i;
+      return peeked = PEEKED_LONG;
+ 
+ 
+ 
+ 

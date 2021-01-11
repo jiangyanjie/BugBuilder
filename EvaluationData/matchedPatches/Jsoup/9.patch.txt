@@ -1,0 +1,14 @@
+/Users/SE4Test/Downloads/checkout/Jsoup+9+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/jsoup_9_fix/src/main/java/org/jsoup/nodes/Entities.java b/Users/SE4Test/Downloads/checkout/jsoup_9_buggy/src/main/java/org/jsoup/nodes/Entities.java
+index 786b1bf..a4c173b 100644
+--- a/Users/SE4Test/Downloads/checkout/jsoup_9_fix/src/main/java/org/jsoup/nodes/Entities.java
++++ b/Users/SE4Test/Downloads/checkout/jsoup_9_buggy/src/main/java/org/jsoup/nodes/Entities.java
+@@ -35,7 +35,7 @@ public class Entities {
+    private static final Map<Character, String> xhtmlByVal;
+    private static final Map<Character, String> baseByVal;
+    private static final Map<Character, String> fullByVal;
+    private static final Pattern unescapePattern = [-Pattern.compile("&(#(x|X)?([0-9a-fA-F]+)|[a-zA-Z]+\\d*);?");-]{+Pattern.compile("&(#(x|X)?([0-9a-fA-F]+)|[a-zA-Z]+);?");+}
+
+    static String escape(String string, Document.OutputSettings out) {
+        return escape(string, out.encoder(), out.escapeMode());
+ 

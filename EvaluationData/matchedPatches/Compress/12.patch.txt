@@ -1,0 +1,16 @@
+/Users/SE4Test/Downloads/checkout/Compress_+12+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/compress_12_fix/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java b/Users/SE4Test/Downloads/checkout/compress_12_buggy/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java
+index 34e7355..bb670f3 100644
+--- a/Users/SE4Test/Downloads/checkout/compress_12_fix/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java
++++ b/Users/SE4Test/Downloads/checkout/compress_12_buggy/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java
+@@ -195,13 +195,7 @@ public class TarArchiveInputStream extends ArchiveInputStream {
+            return null;
+        }
+
+[-try {-]        currEntry = new TarArchiveEntry(headerBuf);[-} catch (IllegalArgumentException e) {-]
+[-            IOException ioe = new IOException("Error detected parsing the header");-]
+[-            ioe.initCause(e);-]
+[-            throw ioe;-]
+[-        }-]
+        entryOffset = 0;
+        entrySize = currEntry.getSize();

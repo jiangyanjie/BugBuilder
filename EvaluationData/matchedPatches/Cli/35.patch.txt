@@ -1,0 +1,16 @@
+/Users/SE4Test/Downloads/checkout/Cli+35+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/Cli_35_fix/src/main/java/org/apache/commons/cli/Options.java b/Users/SE4Test/Downloads/checkout/Cli_35_buggy/src/main/java/org/apache/commons/cli/Options.java
+index 798b176..e9a0aa9 100644
+--- a/Users/SE4Test/Downloads/checkout/Cli_35_fix/src/main/java/org/apache/commons/cli/Options.java
++++ b/Users/SE4Test/Downloads/checkout/Cli_35_buggy/src/main/java/org/apache/commons/cli/Options.java
+@@ -237,9 +237,6 @@ public class Options implements Serializable
+        List<String> matchingOpts = new ArrayList<String>();
+
+        // for a perfect match return the single option only
+[-        if(longOpts.keySet().contains(opt)) {-]
+[-            return Collections.singletonList(opt);-]
+[-        }-]
+
+        for (String longOpt : longOpts.keySet())
+        {
+ 

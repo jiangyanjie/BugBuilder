@@ -1,0 +1,16 @@
+/Users/SE4Test/Downloads/checkout/Compress_+41+_fix/src
+diff --git a/Users/SE4Test/Downloads/checkout/compress_41_fix/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java b/Users/SE4Test/Downloads/checkout/compress_41_buggy/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java
+index 51b1930..5d4c0a8 100644
+--- a/Users/SE4Test/Downloads/checkout/compress_41_fix/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java
++++ b/Users/SE4Test/Downloads/checkout/compress_41_buggy/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java
+@@ -244,10 +244,9 @@ public class ZipArchiveInputStream extends ArchiveInputStream {
+        if (sig.equals(ZipLong.CFH_SIG) || sig.equals(ZipLong.AED_SIG)) {
+            hitCentralDirectory = true;
+            skipRemainderOfArchive();
+[-            return null;-]
+        }
+        if (!sig.equals(ZipLong.LFH_SIG)) {
+            [-throw new ZipException(String.format("Unexpected record signature: 0X%X", sig.getValue()));-]{+return null;+}
+        }
+
+        int off = WORD;
