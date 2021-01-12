@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.8.2
+Created-By: 1.6.0_34-b04 (Sun Microsystems Inc.)
+Bundle-ManifestVersion: 2
+Bundle-Name: EPIC Documentation Plug-in
+Bundle-SymbolicName: org.epic.doc; singleton:=true
+Bundle-Version: 0.7.1
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: EPIC Project
+Require-Bundle: org.eclipse.help
+

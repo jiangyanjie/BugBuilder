@@ -1,0 +1,98 @@
+Manifest-Version: 1.0
+Bundle-DocURL: www.eclipse.org
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6,JavaSE-1.7
+Built-By: ifedorenk
+Bundle-SymbolicName: org.eclipse.m2e.archetype.common;singleton:=false
+Require-Bundle: org.eclipse.m2e.maven.runtime;bundle-version="[1.5.0,1
+ .6.0)"
+Export-Package: org.apache.maven.archetype,org.apache.maven.archetype.
+ catalog,org.apache.maven.archetype.catalog.io.xpp3,org.apache.maven.a
+ rchetype.common,org.apache.maven.archetype.common.io.xpp3,org.apache.
+ maven.archetype.common.util,org.apache.maven.archetype.creator,org.ap
+ ache.maven.archetype.creator.olddescriptor,org.apache.maven.archetype
+ .downloader,org.apache.maven.archetype.exception,org.apache.maven.arc
+ hetype.generator,org.apache.maven.archetype.metadata,org.apache.maven
+ .archetype.metadata.io.xpp3,org.apache.maven.archetype.model,org.apac
+ he.maven.archetype.model.io.xpp3,org.apache.maven.archetype.old,org.a
+ pache.maven.archetype.old.descriptor,org.apache.maven.archetype.regis
+ try,org.apache.maven.archetype.registry.io.xpp3,org.apache.maven.arch
+ etype.repositorycrawler,org.apache.maven.archetype.source,org.codehau
+ s.plexus.velocity,META-INF.plexus
+Bundle-Version: 1.5.0.20140605-2032
+Build-Jdk: 1.6.0_27
+Bundle-ClassPath: archetype-common-2.0-alpha-4.jar,commons-collections
+ -3.2.jar,commons-io-1.3.2.jar,commons-lang-2.1.jar,dom4j-1.6.1.jar,jc
+ hardet-1.0.jar,jdom-1.0.jar,oro-2.0.8.jar,plexus-velocity-1.1.3.jar,v
+ elocity-1.5.jar
+Bundle-Vendor: %Bundle-Vendor
+Bnd-LastModified: 1402014736518
+Bundle-Name: %Bundle-Name
+Tool: Bnd-2.1.0.20130426-122213
+Embed-Transitive: true
+Eclipse-BundleShape: dir
+Created-By: Apache Maven Bundle Plugin
+Embedded-Artifacts: archetype-common-2.0-alpha-4.jar;g="org.apache.mav
+ en.archetype";a="archetype-common";v="2.0-alpha-4",commons-collection
+ s-3.2.jar;g="commons-collections";a="commons-collections";v="3.2",com
+ mons-io-1.3.2.jar;g="commons-io";a="commons-io";v="1.3.2",commons-lan
+ g-2.1.jar;g="commons-lang";a="commons-lang";v="2.1",dom4j-1.6.1.jar;g
+ ="dom4j";a="dom4j";v="1.6.1",jchardet-1.0.jar;g="net.sourceforge.jcha
+ rdet";a="jchardet";v="1.0",jdom-1.0.jar;g="jdom";a="jdom";v="1.0",oro
+ -2.0.8.jar;g="oro";a="oro";v="2.0.8",plexus-velocity-1.1.3.jar;g="org
+ .codehaus.plexus";a="plexus-velocity";v="1.1.3",velocity-1.5.jar;g="o
+ rg.apache.velocity";a="velocity";v="1.5"
+Bundle-ManifestVersion: 2
+Embed-Dependency: archetype-common,commons-collections,commons-io,comm
+ ons-lang,dom4j,jchardet,jdom,oro,plexus-velocity,velocity
+
+Name: about_files/LICENSE-1.1.txt
+SHA1-Digest: LU3HxKIxz/SZNMODB4d2mnr6VUk=
+
+Name: about_files/LICENSE-2.0.txt
+SHA1-Digest: K4uBUimqimHkg/tLoFiLi2xJGJA=
+
+Name: about_files/dom4j-LICENSE.txt
+SHA1-Digest: SQRT7//2ftCQvWowK7UDU2B6Uno=
+
+Name: commons-io-1.3.2.jar
+SHA1-Digest: tt3jg0m6m7Xm6mMgUx6ulpmF2uU=
+
+Name: jchardet-1.0.jar
+SHA1-Digest: +53K8hkU2TEi9hSIasmKWU7X92c=
+
+Name: commons-collections-3.2.jar
+SHA1-Digest: +VGTSqWuWojX5t+qbTIwfYNKiL4=
+
+Name: OSGI-INF/l10n/bundle.properties
+SHA1-Digest: bZ3aSb9EC+r81NMtQCAL11C3/PM=
+
+Name: about_files/MPL-1.1.txt
+SHA1-Digest: q6jXbQr2fVfaPDwyHKpZ89JCOGs=
+
+Name: commons-lang-2.1.jar
+SHA1-Digest: R2PsydeHgckVwH6wPpBXLH/wQgU=
+
+Name: oro-2.0.8.jar
+SHA1-Digest: VZI3T4NGRcSuJQ9Mn7sxTJNp1pg=
+
+Name: jdom-1.0.jar
+SHA1-Digest: oqwc1pCrTIDe/n+bzhTTWTTDXOw=
+
+Name: about.html
+SHA1-Digest: z+aUUeG+5gzLmDDuFEGb+/mMADA=
+
+Name: dom4j-1.6.1.jar
+SHA1-Digest: XTzMBWtvBW2/Dd399DiUuQZaj5Q=
+
+Name: velocity-1.5.jar
+SHA1-Digest: CfMGuvdSP/wOgaY1PQilhNJUEzs=
+
+Name: plexus-velocity-1.1.3.jar
+SHA1-Digest: sHhK+LXNLVtwgrX693Qighj9yxM=
+
+Name: about_files/jdom-LICENSE.txt
+SHA1-Digest: ixVITUctA9P+pCXIrF6qe/d1sPw=
+
+Name: archetype-common-2.0-alpha-4.jar
+SHA1-Digest: rsA7tGP4b0AKJRvBLFeJhVYtO54=
+

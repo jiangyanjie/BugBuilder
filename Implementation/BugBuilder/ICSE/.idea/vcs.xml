@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/Lang_26_buggy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Lang_26_fix" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/buggy18" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/buggy24" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/buggy26" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/commons-lang" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/fixed18" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/fixed24" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/fixed26" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lang_18_buggy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lang_18_fix" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lang_24_buggy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lang_24_fix" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lang_3_buggy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lang_3_buggySC" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lang_3_buggycopy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/buggy26" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/fixed26" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/lang_26_buggy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/lang_26_fix" vcs="Git" />
+  </component>
+</project>
