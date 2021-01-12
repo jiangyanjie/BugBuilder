@@ -21,7 +21,7 @@ do
   P3=${arr[2]}
   repoName="Lang"
   defects4jPath="/users/yanjiejiang/defects4j/framework/bin/defects4j"
-  BugBuilderPath="/Users/yanjiejiang/icse"
+  BugBuilderPath="/Users/yanjiejiang/BugBuilder/ICSE"
 
 $defects4jPath checkout -p $repoName -v "$P1"b -w $BugBuilderPath/"$repoName"_"$P1"_buggy
 $defects4jPath checkout -p $repoName -v "$P1"f -w $BugBuilderPath/"$repoName"_"$P1"_fix
