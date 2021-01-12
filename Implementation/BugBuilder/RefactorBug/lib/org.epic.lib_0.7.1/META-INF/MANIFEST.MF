@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.8.2
+Created-By: 1.6.0_34-b04 (Sun Microsystems Inc.)
+Bundle-ManifestVersion: 2
+Bundle-Name: EPIC External Libs Plug-in
+Bundle-SymbolicName: org.epic.lib
+Bundle-Version: 0.7.1
+Bundle-Vendor: EPIC Project
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.osgi
+Bundle-ClassPath: lib/brazil_mini.jar,lib/gnu-regexp-1.1.4.jar,lib/jdo
+ m-1.1.jar,lib/antlr-2.7.5.jar
+Export-Package: antlr,antlr.actions.cpp,antlr.actions.csharp,antlr.act
+ ions.java,antlr.actions.python,antlr.build,antlr.collections,antlr.co
+ llections.impl,antlr.debug,antlr.debug.misc,antlr.preprocessor,com.su
+ n.server,gnu.regexp,org.jdom,org.jdom.adapters,org.jdom.input,org.jdo
+ m.output,org.jdom.transform,sunlabs.brazil.handler,sunlabs.brazil.pro
+ perties,sunlabs.brazil.proxy,sunlabs.brazil.server,sunlabs.brazil.sun
+ labs,sunlabs.brazil.tcl,sunlabs.brazil.util,sunlabs.brazil.util.http,
+ sunlabs.brazil.util.regexp,tcl.lang
+

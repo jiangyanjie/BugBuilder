@@ -1,0 +1,199 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest: jhp//zLAX6eWn3WUYCjPC2o6DfM=
+Created-By: 1.6.0 (IBM Corporation)
+SHA1-Digest-Manifest-Main-Attributes: +9j3X4CR+ikZ6qy5kKz5Z/zZgT8=
+
+Name: about_files/LICENSE-2.0.txt
+SHA1-Digest: DMnZPrY7w/ZEOj0YI/l8KoozuvM=
+
+Name: org/apache/maven/index/NexusIndexer.class
+SHA1-Digest: RXBLGmChjHBzQXnxIu4o7wyewK8=
+
+Name: org/apache/maven/index/ArtifactInfo$RepositoryVersionComparator.
+ class
+SHA1-Digest: /8n6EwsGEBoFMIpxZs/lRrVd2cw=
+
+Name: indexer-core-3.1.0.jar
+SHA1-Digest: GBPjeokvdkt+rTy99MF2Mc005sc=
+
+Name: org/apache/maven/index/SearchEngine.class
+SHA1-Digest: ewthxKTuSvi1AuMRBMzZunRpn8c=
+
+Name: org/apache/maven/index/ArtifactAvailablility.class
+SHA1-Digest: RJDfedy0/DrFE3H4FOTL/wO7dWo=
+
+Name: org/apache/maven/index/IndexerFieldVersion.class
+SHA1-Digest: JsLjuwaJRUjj2cJDXKbAwz7vBX8=
+
+Name: lucene-highlighter-2.4.1.jar
+SHA1-Digest: 2CuObzwL2aopi6fFQDtjb8qcoNY=
+
+Name: org/apache/maven/index/ArtifactInfoRecord.class
+SHA1-Digest: vudFnHoHvdC+Of19TO1iMuhH8Cw=
+
+Name: org/apache/maven/index/MatchHighlightRequest.class
+SHA1-Digest: Jb33kh5dKkGcCsVciu70SJyVVqM=
+
+Name: org/apache/maven/index/DefaultQueryCreator.class
+SHA1-Digest: 1g6stPWrjdGqgxNjJQ+BTo6FqyI=
+
+Name: org/apache/maven/index/IteratorSearchResponse.class
+SHA1-Digest: 2KYMkduRul7R0AerE8OuX9r8oKY=
+
+Name: org/apache/maven/index/ArtifactInfo.class
+SHA1-Digest: MJcH1/7dbO1BQW98p9N+13cwwRk=
+
+Name: org/apache/maven/index/ArtifactContextProducer.class
+SHA1-Digest: Y5wuWlWTJHK37ddmcaXXXe71UAY=
+
+Name: org/apache/maven/index/FlatSearchResponse.class
+SHA1-Digest: kodTIfMDOm3WzK/71T2QDVT1FTY=
+
+Name: org/apache/maven/index/ArtifactInfoPostprocessor.class
+SHA1-Digest: UNhDaabpXg7NupamzSEBPFWwBrw=
+
+Name: org/apache/maven/index/IteratorSearchRequest.class
+SHA1-Digest: n51GTbdOuthYuUb2vyuZYyORnx0=
+
+Name: org/apache/maven/index/UniqueGAArtifactFilterPostprocessor.class
+SHA1-Digest: +SGsXpIgdEgSFVF9ULBB0Z9W34c=
+
+Name: org/apache/maven/index/Scanner.class
+SHA1-Digest: XexOpgGy80VpN9sVgd3eZaz2/NU=
+
+Name: org/apache/maven/index/NEXUS.class
+SHA1-Digest: 1udeDINUSqgT9OCyD5j9Fm4J11s=
+
+Name: org/apache/maven/index/ArtifactScanningListener.class
+SHA1-Digest: XbkG1e/9m++SqJ0eS3JjMYaRtpo=
+
+Name: org/apache/maven/index/GroupedSearchResponse.class
+SHA1-Digest: 36szSvdlgK5jywDXPxTeXcvgy08=
+
+Name: org/apache/maven/index/AndMultiArtifactInfoFilter.class
+SHA1-Digest: O07Kn7ZbZTb3yGOwKi2Dhfwvuhg=
+
+Name: org/apache/maven/index/MAVEN.class
+SHA1-Digest: 2zIS1zjiapxBK24EN2+zTx3/I3k=
+
+Name: org/apache/maven/index/FlatSearchRequest.class
+SHA1-Digest: pmUdz6VvmmOh/zIPO6CiWYV7xq4=
+
+Name: org/apache/maven/index/AbstractMultiArtifactInfoFilter.class
+SHA1-Digest: H4vBgvuiqIEmlCyBwIrN6I2GirI=
+
+Name: org/apache/maven/index/SearchType.class
+SHA1-Digest: 2nesXA00ZT8fzowg9p+epOLW3vs=
+
+Name: org/apache/maven/index/Grouping.class
+SHA1-Digest: PTcl9bScd9uK2vZT/R02zAVOibg=
+
+Name: org/apache/maven/index/QueryCreator.class
+SHA1-Digest: ql4lBOB/SngdwG0lGssScIeK/PI=
+
+Name: org/apache/maven/index/ArtifactDiscoveryListener.class
+SHA1-Digest: v5tiupPkwFpEZ2kLMwqAivmz1lI=
+
+Name: lucene-core-2.4.1.jar
+SHA1-Digest: o6gFzyOZf8c00Y/Wwf4KgtmTNHU=
+
+Name: OSGI-INF/l10n/bundle.properties
+SHA1-Digest: SUxnzBFlP/EOorM8UN3ypjQ/Bxk=
+
+Name: org/apache/maven/index/UniqueArtifactFilterPostprocessor.class
+SHA1-Digest: A5nxvDV1cfoOM/cKqiu3xoVYtdQ=
+
+Name: org/apache/maven/index/OneLineFragmenter.class
+SHA1-Digest: nFIcw+8eAnAjxP6mhvkjl+Edmm0=
+
+Name: org/apache/maven/index/DefaultScanner$ScannerFileComparator.clas
+ s
+SHA1-Digest: t7fnaLg7esLWdwrVnwf6dVEIs6U=
+
+Name: org/apache/maven/index/GroupedSearchRequest.class
+SHA1-Digest: CAC0FfbLhcCeQah//h5W3LcqX/M=
+
+Name: org/apache/maven/index/DefaultScanner$1.class
+SHA1-Digest: obuOONSBO+1s+AzELlEVXZHhhIY=
+
+Name: org/apache/maven/index/AbstractSearchResponse.class
+SHA1-Digest: GSHp8jLQ95tanjT2pvtwBeAhctU=
+
+Name: org/apache/maven/index/SearchType$1.class
+SHA1-Digest: /uV2jkp3zFhh+DYInje30DAzvzU=
+
+Name: org/apache/maven/index/ScanningRequest.class
+SHA1-Digest: 66q5bJ8/ksIx8vJHFkrPMFAsWv4=
+
+Name: org/apache/maven/index/DefaultScannerListener.class
+SHA1-Digest: Ma9bUrtgPzPIEKEF4Pn5d8RzE4Y=
+
+Name: org/apache/maven/index/DefaultNexusIndexer.class
+SHA1-Digest: yyyM5HPk4/sqSLda0+zfOT40hgQ=
+
+Name: org/apache/maven/index/IndexerEngine.class
+SHA1-Digest: 6MirX130ZOg7RaPlwC+pbD+gmVw=
+
+Name: org/apache/maven/index/CleaningEncoder.class
+SHA1-Digest: Tp1bKmS/g0sJ7CSvVp94htY+miQ=
+
+Name: org/apache/maven/index/DefaultSearchEngine.class
+SHA1-Digest: YregCUnYF3RWjErzMnVtHQWEt3s=
+
+Name: org/apache/maven/index/DefaultIndexerEngine.class
+SHA1-Digest: LJ859dc2cMReTm4mHMHQIcHDCY8=
+
+Name: org/apache/maven/index/IteratorSearchResponse$1.class
+SHA1-Digest: VG1hs3AGI/I2AG1e1XSBb4jtDmE=
+
+Name: org/apache/maven/index/IteratorResultSet.class
+SHA1-Digest: VmoR8UGJ4g2tmMrF3SmHfHulYwM=
+
+Name: org/apache/maven/index/ArtifactInfo$VersionComparator.class
+SHA1-Digest: Xhcrj6O5OLUxzakWP4ISP3lCgVg=
+
+Name: about.html
+SHA1-Digest: pxGiOh/8HFsKCI210AMyMk7FEt4=
+
+Name: org/apache/maven/index/Field.class
+SHA1-Digest: 4l381l3VYcnTI55iRsF2ADoxzk4=
+
+Name: org/apache/maven/index/DefaultArtifactContextProducer.class
+SHA1-Digest: 9xg945lXe+EMzmZVcSgnYb18/jY=
+
+Name: org/apache/maven/index/ScanningResult.class
+SHA1-Digest: FPHpL9mHy4a3jpTsigrqBe3+6AA=
+
+Name: org/apache/maven/index/ArtifactContext.class
+SHA1-Digest: h0myDETL7tcTS5d9e2P3DhLaedE=
+
+Name: org/apache/maven/index/MatchHighlight.class
+SHA1-Digest: zHK+pt43Y9NZHxaCIR4lJ+FBJg4=
+
+Name: org/apache/maven/index/ArtifactInfoGroup.class
+SHA1-Digest: iMyIZ7TSAL5GVZUD7Ts1r+TNNvk=
+
+Name: org/apache/maven/index/MatchHighlightMode.class
+SHA1-Digest: dQwYnXSmbqhqbWSecaHr5Pez4KE=
+
+Name: org/apache/maven/index/DefaultIteratorResultSet.class
+SHA1-Digest: ARgUh6/DV8W6yHxBedQ3r/PvXzs=
+
+Name: org/apache/maven/index/AbstractSearchRequest.class
+SHA1-Digest: auV9e/H9KYolRbFFBBQ0XlXC988=
+
+Name: indexer-artifact-3.1.0.jar
+SHA1-Digest: l8N047kyW217cbJJuLIOny+nqAg=
+
+Name: org/apache/maven/index/ArtifactContext$ModelReader.class
+SHA1-Digest: SeRwrYuskKOpqkDvcgBDTNcbZBo=
+
+Name: org/apache/maven/index/ArtifactInfoFilter.class
+SHA1-Digest: NHdXRPezGr/i1SkCVefNPcvPktY=
+
+Name: org/apache/maven/index/IndexerField.class
+SHA1-Digest: f56Tvh8mpj22SJrtxm7W3E6Ge14=
+
+Name: org/apache/maven/index/DefaultScanner.class
+SHA1-Digest: tGSZ8MGGRoe845ZUUyl/0xF+VbQ=
+

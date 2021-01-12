@@ -1,10 +1,10 @@
 #Patch in Defects4j:
 
-![image](https://github.com/SE4Testing/Data4ICSE2021Submission/blob/main/EvaluationData/mismatchedButConcisePatches/pic/lang14-defects4j.png)
+![image](https://github.com/jiangyanjie/BugBuilder/blob/main/EvaluationData/mismatchedButConcisePatches/pic/lang14-defects4j.png)
 
 #Our patch:
 
-![image](https://github.com/SE4Testing/Data4ICSE2021Submission/blob/main/EvaluationData/mismatchedButConcisePatches/pic/lang14-our.png)
+![image](https://github.com/jiangyanjie/BugBuilder/blob/main/EvaluationData/mismatchedButConcisePatches/pic/lang14-our.png)
 
 #Justification for the conciseness of our patch:
 

@@ -1,10 +1,10 @@
 #Patch in Defects4j:
 
-![image](https://github.com/SE4Testing/Data4ICSE2021Submission/blob/main/EvaluationData/mismatchedAndUnconcisePatches/pic/Clsoure96-defects4j.png)
+![image](https://github.com/jiangyanjie/BugBuilder/blob/main/EvaluationData/mismatchedAndUnconcisePatches/pic/Clsoure96-defects4j.png)
 
 #Our patch:
 
-![image](https://github.com/SE4Testing/Data4ICSE2021Submission/blob/main/EvaluationData/mismatchedAndUnconcisePatches/pic/Closure96-BugBuilder.png)
+![image](https://github.com/jiangyanjie/BugBuilder/blob/main/EvaluationData/mismatchedAndUnconcisePatches/pic/Closure96-BugBuilder.png)
 
 #Comparison and explanation:
 

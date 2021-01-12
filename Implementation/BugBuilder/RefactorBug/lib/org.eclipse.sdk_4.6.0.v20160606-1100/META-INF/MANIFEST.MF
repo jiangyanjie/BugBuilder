@@ -1,0 +1,114 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.eclipse.sdk;singleton:=true
+Archiver-Version: Plexus Archiver
+Built-By: e4Build
+Require-Bundle: org.eclipse.ui;bundle-version="[3.2.0,4.0.0)",org.ecli
+ pse.help.ui;bundle-version="[4.0.0,5.0.0)",org.eclipse.help.base;bund
+ le-version="[4.0.0,5.0.0)",org.eclipse.ui.cheatsheets;bundle-version=
+ "[3.2.0,4.0.0)",org.eclipse.ui.ide.application;bundle-version="[1.0.0
+ ,2.0.0)"
+Bundle-ManifestVersion: 2
+Eclipse-SourceReferences: scm:git:git://git.eclipse.org/gitroot/platfo
+ rm/eclipse.platform.git;path="platform/org.eclipse.sdk";tag="I2016052
+ 5-2000";commitId=993ec08ed52a021ed86f50e30e5dd9e5a2450bda
+Bundle-Vendor: %providerName
+Bundle-Name: %pluginName
+Bundle-Version: 4.6.0.v20160606-1100
+Bundle-Localization: plugin
+Created-By: Apache Maven 3.3.3
+Build-Jdk: 1.8.0_51
+Eclipse-BundleShape: dir
+
+Name: macosx_narrow_book.css
+SHA-256-Digest: FU/XpemebXstnu5vk6M3TP3aNnaAF6UPQihCTB5Bj+k=
+
+Name: narrow_book.css
+SHA-256-Digest: ZbsUVpXTech3duSXV9mwRSDOqP1OLly8UF8WrLieieU=
+
+Name: about.properties
+SHA-256-Digest: BJ/SpdxHTpFF7AxfX59wudkhC7GPkyhMVjQkVwTOVII=
+
+Name: plugin.xml
+SHA-256-Digest: Remk3h8HQ60JcipZC23En1LHCyWgcKDRqSgY5KSaojw=
+
+Name: eclipse64.png
+SHA-256-Digest: xdsV03c6VcmEj9SXvd7L9knddOV/17XV2ZMQjr3g9uI=
+
+Name: helpData.xml
+SHA-256-Digest: KhrsA0KEFupnGg4+iUF7QZohnxID5wZyu/TMdV3M78g=
+
+Name: plugin_customization.properties
+SHA-256-Digest: ZqZaaw39XKy9P3PCrWU0Plc4ooJO4iT3xXtYCMNVSW0=
+
+Name: about.mappings
+SHA-256-Digest: C6cjzfBnASKlBUXTssMQlVYrMfmey7mEKwITqsALumo=
+
+Name: eclipse48.png
+SHA-256-Digest: EeE/qub7BEo/0PoxZcrXMRDFjT00qg3gLR8c9IVhVcU=
+
+Name: book.css
+SHA-256-Digest: uRtSSvOqDBsYxmnEDSWtaOtcsZCFg+4N1MBcnRtFBVs=
+
+Name: about.ini
+SHA-256-Digest: DlU/2qJR6/zNJ9BaNJe/zlJOpmx+NyIlj7BKOLhP8J0=
+
+Name: eclipse22.png
+SHA-256-Digest: BU5gU4t7i3A82Mr5aCTIGjdaTj4g5+tmLcYLb8E4Hl0=
+
+Name: plugin.properties
+SHA-256-Digest: 02/kC4lNxQyIBOyrTidg48a6ituy3srhKLKb3x3oy0w=
+
+Name: eclipse256.gif
+SHA-256-Digest: k9O2crZRj23pUh+8oLJ1QZ2kknUd5ALpOKc5qelBvxc=
+
+Name: eclipse16.gif
+SHA-256-Digest: 5VwS9+oVLDf+MDRxAxFRxxAB5bGPAiwaCh0ce95UvJU=
+
+Name: introData.xml
+SHA-256-Digest: O7PRstwk2Dg7H9CyuLq93Pvx0sZTIriQOXcjT8pSMPM=
+
+Name: plugin_customization.ini
+SHA-256-Digest: PMuPmYrm5LBa+esnxD8c0WqyOdr2YIPjSqYK3yMRzww=
+
+Name: org.eclipse.ui.intro.universal.solstice/intro-eclipse.png
+SHA-256-Digest: Rdk3n6qhuYCV0t/dIA2IdQLoZZQwLO4mCU3U7MK6PQY=
+
+Name: about.html
+SHA-256-Digest: 0RM1x9lTJa7T8YkysaegPuBIeaEvSZypRDfXoMpsJAU=
+
+Name: eclipse512.png
+SHA-256-Digest: YyG3CDYr/uBzhnU9g6E60fSghzMs3N8Pd8AD4pvdCis=
+
+Name: intro-eclipse.png
+SHA-256-Digest: tVA61FalUdc3NRe6eEABDuyh+57e6fQrJ7XrTXLIGsw=
+
+Name: eclipse32.png
+SHA-256-Digest: ktA85ZDd0SYDxbcnnzVpnpATbdHzzTvB7x6Y8FkhCS4=
+
+Name: eclipse1024.png
+SHA-256-Digest: ATWIArBryskrkyeo3x4sHn97swDwhV6QcJvksQ6tKVo=
+
+Name: eclipse_lg.png
+SHA-256-Digest: 55P2Al58atUIsXAq9go0H3CAWv0zEiQQEjxmU0jEm6c=
+
+Name: eclipse48.gif
+SHA-256-Digest: 32qeDoC3Hl1VQhjdS12hoOnYeVMKAbCPZlCphVksfDE=
+
+Name: eclipse24.png
+SHA-256-Digest: 5GRrjp/K1T0As911hsf01BQ2Wc4KNYt6GTlI1RcgwMI=
+
+Name: eclipse32.gif
+SHA-256-Digest: Cim5CqlYdFiSzr6LBlbQirHcWknW+kvA7jot8g1tKnI=
+
+Name: eclipse128.png
+SHA-256-Digest: ZpwXRlfiPwImLHJbIROyDXy/Av64vUttwuvOnAozyvE=
+
+Name: eclipse16.png
+SHA-256-Digest: /J3RvmGlaYuPpn6gL7yrCohkIZ3gNNth3ztHKMGjcJ0=
+
+Name: eclipse256.png
+SHA-256-Digest: iXCC15nl7M4FmsBM4hb2MKrXaZEX+HSO2GFAVkBpaAo=
+
+Name: disabled_book.css
+SHA-256-Digest: vsyrQtXycATf7+qa6NVZEECUj3xrmFPX+JKaKqjBOrA=
+
