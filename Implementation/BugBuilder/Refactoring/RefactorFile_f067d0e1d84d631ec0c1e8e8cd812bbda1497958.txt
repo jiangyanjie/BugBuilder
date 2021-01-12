@@ -1,1 +1,0 @@
-EXTRACT_VARIABLE	src/com/google/javascript/jscomp/CodeConsumer.java	isNegativeZero(x)	negativeZero	248
