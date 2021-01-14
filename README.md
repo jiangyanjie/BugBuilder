@@ -1,12 +1,12 @@
-#What does BugBuilder do?
+**What does BugBuilder do?**
 
 BugBuilder is a tool to extract complete and concise bug-fixing patches from human-written patches in version control systems. 
 
-#How to obtain BugBuilder?
+**How to obtain BugBuilder?**
 
 The replication package, including BugBuilder itself, can be downloaded from https://github.com/jiangyanjie/BugBuilder (This repository is permanently stored and publicly available).
 
-#What does the replication package contain?
+**What does the replication package contain?**
 
 There are several folders within the replication package:
 
