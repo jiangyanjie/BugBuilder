@@ -33,8 +33,11 @@ Detailed information of Defects4J can be found at https://github.com/rjust/defec
 -- `git clone https://github.com/rjust/defects4j`
 
 2)Initialize Defects4J:
+
    -- `cd defects4j` 
+   
    -- `cpanm --installdeps .`
+   
    -- `./init.sh `
    
 3)Add Defects4J’s executables to your PATH:
@@ -44,3 +47,38 @@ Detailed information of Defects4J can be found at https://github.com/rjust/defec
 4)Check installation:
 
    --`defects4j info -p Lang`
+
+**Step-by-step construction for running BugBuilder:**
+
+Illustrating with an example (Bug 26 of project **Lang**) 
+
+**Note**: we only test on Mac OS
+
+1)Install and initialize Defects4J.
+
+2)Preparation
+
+   Initialization of parameters in SpecialVersion.sh (Lines 22-25): 
+   
+   ![image](https://github.com/jiangyanjie/BugBuilder/blob/main/GeneralDocumentation/sh.png)
+   
+   Initialization of parameters in Setting.java
+   
+   ![image](https://github.com/jiangyanjie/BugBuilder/blob/main/GeneralDocumentation/setting.png)
+  
+  3)Checkout source code to the specified version
+  
+`cd BugBuilder/icse/src`
+
+`./SpecialVersion.sh`
+
+4)Run getDiffCommit.java
+
+`Javac getDiffCommit.java`
+
+`Java getDiffCommit`
+
+5)Check the output:
+
+If succeeded, the generated patch is stored in the section marked “succeed:”. 
+   
