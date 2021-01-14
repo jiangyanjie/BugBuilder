@@ -219,6 +219,7 @@ public class CompileJavaTotalProject {
         long end;
         for(int t=0;t< removedNull.size();t++)
         {
+            String dfPath = "";
             ArrayList<String> getEachDir =getFileName(removedNull.get(t));
 
             Collections.sort(getEachDir, Collections.reverseOrder());
@@ -236,13 +237,19 @@ public class CompileJavaTotalProject {
                     getEachDir.remove(0);
 //                  System.out.println(old + " ==" + oPath);
 //                  System.out.println(oPath);
+                    dfPath = oPath;
                 }
                 ArrayList<String> version = Utils.readFile(dir +"/bug");
                 String temp = version.get(0).substring(0,version.get(0).lastIndexOf("/src"));
                 String s= compileFile(temp,JPath);
+                String lable = "";
                 if((!s.contains("FAIL")) || (!s.contains("FAILED")))
                 {
                     System.out.println(s);
+                    if(s.contains("Failing tests: 0")){
+                        lable = "succeed: ";
+                        System.out.println(lable + dfPath);
+                    }
                 }
 
                 end = System.currentTimeMillis();
