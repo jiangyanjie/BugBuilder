@@ -33,11 +33,8 @@ Detailed information of Defects4J can be found at https://github.com/rjust/defec
 -- `git clone https://github.com/rjust/defects4j`
 
 2)Initialize Defects4J:
-
-   -- `cd defects4j`
-   
+   -- `cd defects4j` 
    -- `cpanm --installdeps .`
-   
    -- `./init.sh `
    
 3)Add Defects4J’s executables to your PATH:
