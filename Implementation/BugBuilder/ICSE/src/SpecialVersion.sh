@@ -19,10 +19,10 @@ do
   P1=${arr[0]}
   P2=${arr[1]}
   P3=${arr[2]}
-  repoName="Lang" #The enclosing project name of bug
-  # Defects4j executables path
+  repoName="Lang" # Name of Java project containing the given bug
+  # Path to Defects4J,i.e.,where it has been installed
   defects4jPath="/users/yanjiejiang/defects4j/framework/bin/defects4j"
-  BugBuilderPath="/Users/yanjiejiang/icse" # The path of BugBuilder
+  BugBuilderPath="/Users/yanjiejiang/icse" # Path to BugBuilder, i.e., where it's source code has been placed
 
 $defects4jPath checkout -p $repoName -v "$P1"b -w $BugBuilderPath/"$repoName"_"$P1"_buggy
 $defects4jPath checkout -p $repoName -v "$P1"f -w $BugBuilderPath/"$repoName"_"$P1"_fix
