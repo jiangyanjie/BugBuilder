@@ -84,7 +84,7 @@ public class getDiffCommit {
             for(int i=0;i< version.size();i++)
             {
                 String csvPath= dir + "/diff/cmdDiff_lang"+bugN+".txt";
-                String defPatch = dir + "/diff/defaultStyle.txt";
+                String defPatch = dir + "/diff/cmdDiff_lang.txt";
                 String fixV = version.get(i);
                 String buggyV=fixV.replace("_fix","_buggy");
                 String cmd = "git diff -U99999 --word-diff=plain "+fixV+ " "+buggyV;
