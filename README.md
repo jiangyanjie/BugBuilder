@@ -1,4 +1,4 @@
-**Defect Reposity Built by BugBuilder**
+**Defect Repository Built by BugBuilder**
 
 https://github.com/liuhuigmail/GrowingBugRepository
 
