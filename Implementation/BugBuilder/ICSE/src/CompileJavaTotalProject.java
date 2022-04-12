@@ -4,23 +4,71 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.List;
 
 public class CompileJavaTotalProject {
+
+    static ArrayList<String> ttlist = new ArrayList<>();
+    static ArrayList<String> fileNo = new ArrayList<>();
+    static ArrayList<String> failNumber = new ArrayList<>();
+
     public static void main(String[] args) throws Exception {
 
     }
 
-    public static void runCompile(String dir) throws Exception {
-        String diffPath =dir +"/diff";
+    public static ArrayList<String> getCandidiate(ArrayList<String> input){
+        ArrayList<String> res = new ArrayList<>();
+        ArrayList<Integer> ftn = new ArrayList<>();
+        for(int t=0;t<input.size();t++){
+            String gftn = input.get(t).split("@#@")[0];
+            ftn.add(Integer.valueOf(gftn));
+        }
+
+        Collections.sort(ftn);
+        if(ftn.size() ==0){
+            return res;
+        }
+        int failingTestNum = ftn.get(0);
+//        System.out.println("failingTest Num: " + failingTestNum);
+        for(int i=0;i< input.size();i++){
+            String fn = input.get(i).split("@#@")[0];
+            if(fn.equals(""+failingTestNum)){
+                res.add(input.get(i));
+            }
+        }
+//        System.out.println("test: "+res);
+        return res; //返回failing test数量最小的候选patch的信息
+    }
+
+    public static int getFileOrder(String t){
+        int p1 = t.lastIndexOf("/");
+        String t1 = t.substring(0,p1);
+
+        int p2 = t1.lastIndexOf("/");
+        String t2 = t1.substring(p2+1);
+        return Integer.valueOf(t2);
+    }
+    public static void runCompile( String finalPath, String origBug,String args1, String args2) throws Exception {
+//        String diffPath =dir +"/src/diff";
+        String diffPath ="./src/diff";
         File folder = new File(diffPath);
         File[] listOfFiles = folder.listFiles();
+        long startTime= System.currentTimeMillis();
 
         for (File file : listOfFiles) {
             if (file.isDirectory()) {
                 String dPath = file.getAbsolutePath(); // dPath 是后缀为a的文件夹
                 ArrayList<String> modifyFile =removeDuplicate(run(dPath));
                 ArrayList<String> compiledPatch = refilter(dPath);
-                replaceFile(compiledPatch,modifyFile,dir, Setting.defects4jPath);
+                replaceFile(compiledPatch,modifyFile,origBug, Setting.defects4jPath,finalPath,args1,args2);
+                long endTime =System.currentTimeMillis();
+                if(endTime-startTime>2400*1000){
+                    return;
+                }
+
+
             }
         }
     }
@@ -148,6 +196,7 @@ public class CompileJavaTotalProject {
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
         int count=0;
         int filecount =getFileNumber(eachDirPath);
+//        System.out.println("the number of file"+filecount);
         ArrayList<String> fileName =getFileName(eachDirPath);
         for(int i=0;i< filecount;i++)
         {
@@ -206,7 +255,7 @@ public class CompileJavaTotalProject {
      }
 
  // step 4 : 将动态编译成功的文件夹，放回fix项目编译测试
-    public static void replaceFile(ArrayList<String> res, ArrayList<String> fixV,String dir, String JPath) throws Exception {
+    public static void replaceFile(ArrayList<String> res, ArrayList<String> fixV,String origBug, String JPath, String finalPath,String args1,String args2) throws Exception {
 //       System.out.println("======");
         ArrayList<String> removedNull = new ArrayList<String>();
         for(int q=0;q<res.size();q++)
@@ -217,9 +266,13 @@ public class CompileJavaTotalProject {
         long start = System.currentTimeMillis();
         long time;
         long end;
+        int fileorder;
+
         for(int t=0;t< removedNull.size();t++)
         {
-            String dfPath = "";
+
+            ArrayList<String>  dfPath = new ArrayList<>();
+            ArrayList<String>  tOld= new ArrayList<>();
             ArrayList<String> getEachDir =getFileName(removedNull.get(t));
 
             Collections.sort(getEachDir, Collections.reverseOrder());
@@ -229,26 +282,49 @@ public class CompileJavaTotalProject {
             {
                 return;
             }else{
+                int show =1;
                 for(int i=0;i< fixV.size();i++)
                 {
                     String old = fixV.get(i);
                     String oPath=getEachDir.get(0);
                     RC(old,oPath,old);
                     getEachDir.remove(0);
-//                  System.out.println(old + " ==" + oPath);
+//                    System.out.println("current patch: "+old + " ==" + oPath);
+                    System.out.println("current patch: " + " ==" + oPath);
 //                  System.out.println(oPath);
-                    dfPath = oPath;
+                    fileorder=getFileOrder(oPath);
+//                   tOld=old;
+//                  dfPath = oPath;
+                    tOld.add(old);
+                    dfPath.add(oPath);
+//                    System.out.println(dfPath);
+//                    System.out.println(tOld);
                 }
-                ArrayList<String> version = Utils.readFile(dir +"/bug");
-                String temp = version.get(0).substring(0,version.get(0).lastIndexOf("/src"));
+//                ArrayList<String> version = Utils.readFile(dir +"/src/bug");
+                String temp = origBug.substring(0,origBug.lastIndexOf("/src"));
+//                System.out.println("--------" + temp);
+                System.out.println("compile and test each candidate patch: (maybe cost long time)");
                 String s= compileFile(temp,JPath);
-                String lable = "";
+//                if(show==1){
+//                    System.out.println("The first version: "+s);
+//                    show++;
+//                }
+
+                String lable ="";
                 if((!s.contains("FAIL")) || (!s.contains("FAILED")))
                 {
-                    System.out.println(s);
-                    if(s.contains("Failing tests: 0")){
-                        lable = "succeed: ";
-                        System.out.println(lable + dfPath);
+//                    System.out.println(s);
+                    // 对输出信息进行处理
+
+                    Pattern rDelete = Pattern.compile("Failing tests: "+"[0-9]\\d*");
+                    Matcher mDelete = rDelete.matcher(s);
+
+                    while (mDelete.find()) {
+
+//                        System.out.println("========="+mDelete.group());
+                        ttlist.add(mDelete.group()); // ttlist存储每个候选跑测试用例的failing tests数量
+//                        System.out.println("*********" + tOld+ "," +getFileOrder(dfPath));
+                        fileNo.add(tOld+ "@#@" +getFileOrder(dfPath.get(0)));
                     }
                 }
 
@@ -257,9 +333,34 @@ public class CompileJavaTotalProject {
                 if(time > 2400*1000) //设定运行时间为半小时
                 {
                     System.out.println("time out");
-                    break;
+                    return ;
                 }
             }
+        }
+
+        for(int q=0;q< ttlist.size();q++){
+            String[] eachL = ttlist.get(q).split(",");
+            for(String s:eachL){
+//                System.out.println("@@@@@@@@"+s);
+                String t = s.split(" ")[2];
+//                System.out.println("sdfafaf" + t);
+                failNumber.add(Integer.valueOf(t)+"@#@"+fileNo.get(q));
+
+            }
+        }
+
+       //--------------  add 9-24 ----------
+        ArrayList<String> canNumbers = getCandidiate(failNumber); //canNumbers 是failing test最小的所有候选的patch信息
+        int csize = canNumbers.size();
+        if(csize ==1){
+            System.out.println("generate one patch");
+            String[] aline = canNumbers.get(0).split("@#@");
+//            System.out.println("fileName: "+aline[2] +", failingTest: "+aline[0]);
+//            String output=System.getProperty("user.dir")+"/src/finalPatch.txt";
+            clearPatch.generatePatch(finalPath,args1,args2);
+        }else{
+           System.out.println("There are multiple candidate");
+           selectMinPatch.getOne(canNumbers,finalPath,args1,args2);
         }
     }
 
@@ -287,7 +388,7 @@ public class CompileJavaTotalProject {
         for(int i=0;i<fjava.size();i++)
         {
             String fLine = fjava.get(i);
-            if(fLine.startsWith(" a/") || fLine.startsWith("index") || fLine.startsWith("+++") || fLine.startsWith("---") ||fLine.startsWith("@@"))
+            if((fLine.startsWith(" a/")&&(fLine.endsWith(".java"))) || fLine.startsWith("index") || fLine.startsWith("+++") || fLine.startsWith("---") ||fLine.startsWith("@@"))
             {
 //               System.out.println("****"+fLine);
             }else{
@@ -307,12 +408,20 @@ public class CompileJavaTotalProject {
 
     //编译项目并测试 ///defects4j
     public static String compileFile(String file, String JPath) throws Exception {
-        String compile = JPath+"/defects4j compile";
-//      String compile = "mvn compile -Dlicense.skip=true -Dcheckstyle.skip -Drat.skip -Denforcer.skip -Danimal.sniffer.skip -Dmaven.javadoc.skip -Dfindbugs.skip -Dwarbucks.skip -Dmodernizer.skip -Dimpsort.skip -Dmdep.analyze.skip -Dpgpverify.skip -Dxml.skip=true";
-        String test     = JPath+"/defects4j test";
+//        String compile = JPath+"/defects4j compile";
+////      String compile = "mvn compile  -Dlicense.skip=true -Dcheckstyle.skip -Drat.skip -Denforcer.skip -Danimal.sniffer.skip -Dmaven.javadoc.skip -Dfindbugs.skip -Dwarbucks.skip -Dmodernizer.skip -Dimpsort.skip -Dmdep.analyze.skip -Dpgpverify.skip -Dxml.skip=true";
+//        String test     = JPath+"/defects4j test";
 //      String test = "mvn test -Dlicense.skip=true -Dcheckstyle.skip -Drat.skip -Denforcer.skip -Danimal.sniffer.skip -Dmaven.javadoc.skip -Dfindbugs.skip -Dwarbucks.skip -Dmodernizer.skip -Dimpsort.skip -Dmdep.analyze.skip -Dpgpverify.skip -Dxml.skip=true";
+//        String compile="defects4j compile4bugmining -t " + tempdir;
+        String compile="defects4j compile";
+//        String test="defects4j test4bugmining -e " + tempdir;
+        String test="defects4j test";
         String c = getDiffCommit.execCmd(compile , new File(file));
         String d = getDiffCommit.execCmd(test , new File(file));
+//        System.out.println("compile and test::");
+//        System.out.println(c + "++\n" +d);
+        System.out.println(c);
+        System.out.println(d);
         return c + "++\n" +d;
 
     }

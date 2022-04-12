@@ -14,17 +14,23 @@ public class extractChange {
 //        runExactChange();
     }
 
-    public static void runExactChange(String dir) throws IOException {
-        File folder = new File(dir +"/diff");
+    public static void runExactChange() throws IOException {
+//        File folder = new File(dir +"/src/diff");
+        File folder = new File("./src/diff");
         File[] listOfFiles = folder.listFiles();
-
+        long startTime = System.currentTimeMillis();
         for (File file : listOfFiles) {
+//            System.out.println("no input the loop");
             if (file.isFile()) {
                 String oPath = file.getAbsolutePath();
+//                System.out.println("opath: " + oPath);
                 if(oPath.endsWith("t.txt"))
                 {
                     ArrayList<String> gitDiffData = readFile(oPath);
-                    tokenizer(gitDiffData,oPath);
+                    boolean finishFlag =tokenizer(gitDiffData,oPath,startTime);
+                    if(!finishFlag){
+                        return;
+                    }
                 }
             }
         }
@@ -80,7 +86,7 @@ public class extractChange {
     }
 
 
-    public static void tokenizer(ArrayList<String> gitDiffData, String aPath) throws IOException {
+    public static boolean tokenizer(ArrayList<String> gitDiffData, String aPath, long startTime) throws IOException {
 
         ArrayList<String> extractedResult = new ArrayList<>();
         ArrayList<String> res = extractChange(gitDiffData,extractedResult);
@@ -112,27 +118,28 @@ public class extractChange {
 
         for(int t=0; t<modifyToken.size();t++){
             String temp1 = modifyToken.get(t);
+//            System.out.println(temp1);
             modifyTokenResult.add(temp1);
             modifyTokenNum++;
         }
 
         //输出信息
 //        System.out.println("add token number: " + addTokenResult.size());
-//        for(int i=0;i< addTokenResult.size();i++)
-//        {
+        for(int i=0;i< addTokenResult.size();i++)
+        {
 //            System.out.println(addTokenResult.get(i));
-//        }
+        }
 //        System.out.println("delete token number: "+ deleteTokenNum);
-//        for(int i=0;i< deleteTokenResult.size();i++)
-//        {
+        for(int i=0;i< deleteTokenResult.size();i++)
+        {
 //            System.out.println(deleteTokenResult.get(i));
-//        }
-//
+        }
+
 //        System.out.println("modify token number: "+ modifyTokenNum);
-//        for(int i=0;i< modifyTokenResult.size();i++)
-//        {
+        for(int i=0;i< modifyTokenResult.size();i++)
+        {
 //            System.out.println(modifyTokenResult.get(i));
-//        }
+        }
 
         //----------follow here---------
 
@@ -144,9 +151,12 @@ public class extractChange {
         long deleteTokenIndex = FindSubSet.Biannary2Decimal(deleteTokenArray.length);
         long modifyTokenIndex = FindSubSet.Biannary2Decimal(modifyTokenArray.length);
 
-//        System.out.println("+++"+addTokenIndex+",,,"+addTokenArray.length);
-//        System.out.println("---"+deleteTokenIndex+",,,"+deleteTokenArray.length);
-//        System.out.println("***"+modifyTokenIndex+",,,"+modifyTokenArray.length);
+//        System.out.println("addToken"+addTokenIndex+","+addTokenArray.length);
+//        System.out.println("deleteToken,"+deleteTokenIndex+","+deleteTokenArray.length);
+//        System.out.println("modifyToken,"+modifyTokenIndex+","+modifyTokenArray.length);
+        System.out.println("addToken"+","+addTokenArray.length);
+        System.out.println("deleteToken"+","+deleteTokenArray.length);
+        System.out.println("modifyToken"+","+modifyTokenArray.length);
 
         getAddIndex(addTokenIndex,addTokenResult);
         getDeleteIndex(deleteTokenIndex,deleteTokenResult);
@@ -162,12 +172,14 @@ public class extractChange {
 //        System.out.println("add token ind"+addTokenInd);
 //        System.out.println("delete token ind"+deleteTokenInd);
 //        System.out.println("modify token ind"+modifyTokenInd);
-        generateFile(gitDiffData, deleteTokenInd, addTokenInd, modifyTokenInd, modifyTokenResult,addTokenResult,deleteTokenResult,aPath);
+        System.out.println("output each candidate patch as txt file");
+        return generateFile(gitDiffData, deleteTokenInd, addTokenInd, modifyTokenInd, modifyTokenResult,addTokenResult,deleteTokenResult,aPath,startTime);
 
     }
 
-    public static void generateFile(ArrayList<String> filename, long deleteN, long addN, long modifyN,ArrayList<String> modifyTokenResult,ArrayList<String> addTokenResult,ArrayList<String> deleteTokenResult,String aPath){
+    public static boolean generateFile(ArrayList<String> filename, long deleteN, long addN, long modifyN,ArrayList<String> modifyTokenResult,ArrayList<String> addTokenResult,ArrayList<String> deleteTokenResult,String aPath,long startTime){
         int count=0;
+//        long startTime = System.currentTimeMillis();
 
         for(long i=0;i<= deleteN;i++)
         {
@@ -186,6 +198,11 @@ public class extractChange {
                         String finalEach = genPatch.getMinPatch(eachCode, deleteT, addT, modifyT);
                         genPatch.appendFile(finalEach, path,count+".txt");
                         genPatch.appendFile("\n", path, count+".txt");
+                        long endTime = System.currentTimeMillis();
+                        if(endTime-startTime>= 2400*1000){
+                            System.out.println("time out");
+                            return false;
+                        }
                     }
                     count++;
                 }
@@ -193,7 +210,8 @@ public class extractChange {
             }
 
         }
-//        System.out.println(count);
+        System.out.println("candidate number: "+count);
+        return true;
     }
 
     private static ArrayList<String> removeHeader(ArrayList<String> fjava,ArrayList<String> removeHead) {
@@ -217,18 +235,24 @@ public class extractChange {
 
         for(int i=0;i< gitDiffData.size();i++)
         {
-            String lineChange = gitDiffData.get(i);//.replace("[-+][0-9][0-9]):([0-9][0-9])$\", \"$1$2\"); -]","");
+            String lineChange = gitDiffData.get(i);
 
             Pattern rModify = Pattern.compile(patternModify); // Create a Pattern object
             Matcher mModify = rModify.matcher(lineChange); // Now create matcher object.
+//            System.out.println(mModify.toString());
+
+
             StringBuffer sb1 = new StringBuffer();
             StringBuffer sb2 = new StringBuffer();
             StringBuffer sb3 = new StringBuffer();
             String afterM="";
             String afterD="";
+
+//            System.out.println(mModify.find());
             while (mModify.find()) {
                 extractedResult.add(mModify.group());
 //                afterM=mModify.group();
+//                System.out.println(mModify.group());
                 mModify.appendReplacement(sb1,"").toString();
 
             }

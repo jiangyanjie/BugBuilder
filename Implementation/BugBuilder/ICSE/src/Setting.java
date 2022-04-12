@@ -1,4 +1,4 @@
 public class Setting {
-    //Path to Defects4J,i.e.,where it has been installed
-    public static String defects4jPath="/users/yanjiejiang/defects4j/framework/bin";
+    //initialize Defects4J executable path
+    public static String defects4jPath="";//""/users/yanjiejiang/defects4j/framework/bin";
 }

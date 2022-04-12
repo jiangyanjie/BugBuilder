@@ -44,11 +44,11 @@ public class CompileJava {
                 }
                 end = System.currentTimeMillis();
                 time = end - start;
-                if(time > 1200*1000) //设定运行时间为半小时
-                {
-                    System.out.println("wuwuwu");
-                    break;
-                }
+//                if(time > 1200*1000) //设定运行时间为半小时
+//                {
+//                    System.out.println("wuwuwu");
+//                    break;
+//                }
             }
 
 
@@ -62,8 +62,10 @@ public class CompileJava {
 
     //编译项目并测试
     public static String compileFile(String file) throws Exception {
-        String compile = "/users/yanjiejiang/defects4j/framework/bin/defects4j compile";
-        String test     = "/users/yanjiejiang/defects4j/framework/bin/defects4j test";
+//        String compile = "/users/yanjiejiang/defects4j/framework/bin/defects4j compile ";
+        String compile = "defects4j compile";
+
+        String test     = "defects4j test";
         String c = getDiffCommit.execCmd(compile , new File(file));
         String d = getDiffCommit.execCmd(test , new File(file));
         return c + "++\n" +d;
