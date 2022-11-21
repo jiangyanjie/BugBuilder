@@ -62,11 +62,11 @@ Illustrating with an example (Bug 26 of project **Lang**)
 
 2)Preparation
 
-   Initialization of parameters in SpecialVersion.sh (Lines 22-25): 
+   Initialization of parameters in SpecialVersion.sh (Lines 22-25): 
    
    ![image](https://github.com/jiangyanjie/BugBuilder/blob/main/GeneralDocumentation/sh.png)
    
-   Initialization of parameters in Setting.java
+   Initialization of parameters in Setting.java
    
    ![image](https://github.com/jiangyanjie/BugBuilder/blob/main/GeneralDocumentation/setting.png)
   
