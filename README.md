@@ -84,5 +84,5 @@ Illustrating with an example (Bug 26 of project **Lang**)
 
 5)Check the output:
 
-If succeeded, the generated patch is stored in the section marked “succeed:”. 
+If succeeded, the generated patch is stored in the section marked “succeed:”
    
