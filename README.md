@@ -72,15 +72,15 @@ Illustrating with an example (Bug 26 of project **Lang**)
   
   3)Checkout source code to the specified version
   
-`cd BugBuilder/icse/src`
+`cd BugBuilder/icse/src`
 
-`./SpecialVersion.sh`
+`./SpecialVersion.sh`
 
 4)Run getDiffCommit.java
 
-`Javac getDiffCommit.java`
+`Javac getDiffCommit.java`
 
-`Java getDiffCommit`
+`Java getDiffCommit`
 
 5)Check the output:
 
